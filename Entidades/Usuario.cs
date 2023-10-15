@@ -8,6 +8,7 @@ namespace Entidades
     [XmlInclude(typeof(UsuarioComun))]
     public class Usuario
     {
+        private int id;
         private string username;
         private string contraseña;
         private string mail;
@@ -29,13 +30,12 @@ namespace Entidades
         public string Contraseña { get => contraseña; set => contraseña = value; }
         public string Mail { get => mail; set => mail = value; }
         public Roles Rol { get => rol; set => rol = value; }
-
+        public int Id { get => id; set => id = value; }
 
         public bool IniciarSesion()
         {
             bool resultado = false;
-
-            List<Usuario> usuarios = Serializadora.LeerXML(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\volquetesDB");
+            List<Usuario> usuarios = Serializadora.LeerXMLUsuario(@"..\..\..\..\DBxml\usuariosDB");
 
             foreach (var item in usuarios)
             {
@@ -87,6 +87,20 @@ namespace Entidades
             }
 
             return respuesta;
+        }
+
+        private int GenerarId()
+        { 
+            int actualId = Serializadora.LeerXMLUsuarioId(@"..\..\..\..\DBxml\actualIdDB");
+            int idAsignable = actualId + 1;
+            Serializadora.EscribirXMLUsuariosId(@"..\..\..\..\DBxml\actualIdDB", idAsignable);
+
+            return idAsignable;
+        }
+
+        public void AsignarId()
+        {
+            this.id = GenerarId();
         }
 
         public override string ToString()

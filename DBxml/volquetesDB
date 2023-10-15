@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfVolquete xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Volquete>
+    <Tipo>construccion</Tipo>
+    <Descripcion>primer volquete</Descripcion>
+    <Precio>15000</Precio>
+    <Capacidad>300</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+  </Volquete>
+  <Volquete>
+    <Tipo>residuos</Tipo>
+    <Descripcion>segundo volquete anashe</Descripcion>
+    <Precio>10</Precio>
+    <Capacidad>1</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+  </Volquete>
+  <Volquete>
+    <Tipo>construccion</Tipo>
+    <Descripcion>prueba</Descripcion>
+    <Precio>10</Precio>
+    <Capacidad>10</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+  </Volquete>
+  <Volquete>
+    <Tipo>residuos</Tipo>
+    <Descripcion>asdsa</Descripcion>
+    <Precio>234</Precio>
+    <Capacidad>564645</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+  </Volquete>
+  <Volquete>
+    <Tipo>construccion</Tipo>
+    <Descripcion>comprame</Descripcion>
+    <Precio>500</Precio>
+    <Capacidad>100</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+  </Volquete>
+  <Volquete>
+    <Tipo>construccion</Tipo>
+    <Descripcion>hola tio</Descripcion>
+    <Precio>123</Precio>
+    <Capacidad>213</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+  </Volquete>
+</ArrayOfVolquete>

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Interfaz
 {
-    public partial class AlquileresUsuario : Form
+    public partial class VolqueteCard : Control
     {
-        public AlquileresUsuario()
+        public VolqueteCard(VolqueteCard volquete)
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

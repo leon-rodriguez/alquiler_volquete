@@ -1,6 +1,6 @@
 ﻿namespace Interfaz
 {
-    partial class AlquileresUsuario
+    partial class Volquetes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
             SuspendLayout();
             // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.None;
-            button1.Location = new Point(243, 177);
-            button1.Name = "button1";
-            button1.Size = new Size(435, 252);
-            button1.TabIndex = 0;
-            button1.Text = "Alquileres NAHSHEHSEHHSE";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // AlquileresUsuario
+            // Volquetes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(952, 674);
-            Controls.Add(button1);
-            Name = "AlquileresUsuario";
-            Text = "AlquileresUsuario";
+            ClientSize = new Size(960, 707);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Volquetes";
+            Text = "Prueba";
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button button1;
     }
 }

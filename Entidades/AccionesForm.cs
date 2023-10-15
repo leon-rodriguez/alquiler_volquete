@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class VolqueteResiduo : Volquete
+    public class AccionesForm
     {
-        int cantidadTotal;
-        int cantidadReservada;
     }
 }

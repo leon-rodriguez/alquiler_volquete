@@ -21,4 +21,8 @@ C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.Registro.resources
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.HomeVolquetes.resources
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.AdministradorUsuarios.resources
-C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.AlquileresUsuario.resources
+C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.PrimeraPantallaVolquetes.resources
+C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.Properties.Resources.resources
+C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.AñadirVolquete.resources
+C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.Volquetes.resources
+C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.VolqueteCard.resources

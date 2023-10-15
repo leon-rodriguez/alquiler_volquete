@@ -1,3 +1,5 @@
+using Entidades;
+
 namespace Interfaz
 {
     internal static class Program

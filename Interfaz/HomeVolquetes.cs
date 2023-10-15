@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,31 @@ namespace Interfaz
 {
     public partial class HomeVolquetes : Form
     {
-        public HomeVolquetes()
+        private Usuario usuarioActual;
+        private TiposVolquete seleccionUsuarioPantallaInicio;
+        private Form formActivo;
+        public HomeVolquetes(Usuario usuario)
         {
             InitializeComponent();
-            personalizarDiseño();
+            this.usuarioActual = usuario;
+            abrirFormulario(new PrimeraPantallaVolquetes());
         }
 
-        private void personalizarDiseño()
+        /*private void personalizarDiseño()
         {
+            abrirFormularioHijo(new PrimeraPantallaVolquetes());
             panelVolquetesSubmenu.Visible = false;
             panelCuentaSubmenu.Visible = false;
-        }
+            if (usuarioActual.Rol == Roles.administrador)
+            {
+                btnAdministrarUsuarios.Visible = false;
+                panelCuentaSubmenu.Height = panelCuentaSubmenu.Height - 45;
+
+                btnAñadirVolquete.Visible = false;
+                panelVolquetesSubmenu.Height = panelVolquetesSubmenu.Height - 45;
+
+            }
+        }*/
 
         private void ocultarSubmenu()
         {
@@ -50,6 +65,7 @@ namespace Interfaz
         }
         private void btnVolquetes_Click(object sender, EventArgs e)
         {
+            Console.WriteLine(this.usuarioActual.ToString());
             mostrarSubMenu(panelVolquetesSubmenu);
         }
 
@@ -57,33 +73,47 @@ namespace Interfaz
         {
             mostrarSubMenu(panelCuentaSubmenu);
         }
-        private Form formularioActivo = null;
-        private void abrirFormularioHijo(Form formularioHijo)
-        {
-            if (formularioActivo != null)
-            {
-                Console.WriteLine("gola");
-                formularioActivo.Close();
-            }
-                formularioActivo = formularioHijo;
-                formularioHijo.TopLevel = false;
-                formularioHijo.FormBorderStyle = FormBorderStyle.None;
-                formularioHijo.Dock = DockStyle.Fill;
-                panelHijoInicio.Controls.Add(formularioHijo);
-                panelHijoInicio.Tag = formularioHijo;
-                formularioHijo.BringToFront();
-                formularioHijo.Show();
-        }
 
+        public void abrirFormulario(Form formAbrir)
+        {
+            if (formActivo != null)
+            {
+                formActivo.Close();
+            }
+            formActivo = formAbrir;
+            formAbrir.MdiParent = this;
+            formAbrir.Show();
+            formAbrir.Location = new Point(0, 0);
+        }
         private void btnAlquileresUsuario_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new AlquileresUsuario());
+            //abrirFormularioHijo(new AlquileresUsuario());
+            Console.WriteLine("gdiojhfodsis");
+            //abrirFormularioHijo(new PrimeraPantallaVolquetes());
 
         }
 
         private void btnAdministrarUsuarios_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new AdministradorUsuarios());
+            //abrirFormularioHijo(new AdministradorUsuarios());
+            //abrirFormularioHijo(new PrimeraPantallaVolquetes());
+
+        }
+
+        private void btnAñadirVolquete_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new AñadirVolquete());
+        }
+
+        private void btnVerConstruccion_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new Volquetes(TiposVolquete.construccion));
+
+        }
+
+        private void btnVerVolquetesResiduos_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new Volquetes(TiposVolquete.residuos));
         }
     }
 }

@@ -10,8 +10,10 @@ namespace Entidades
     [Serializable]
     [XmlInclude(typeof(Usuario))]
 
-    public class Serializadora{ 
-        private static void EscribirXML(string path, List<Usuario> usuario)
+    public class Serializadora{
+
+        #region Dbusuarios      
+        private static void EscribirXMLUsuarios(string path, List<Usuario> usuario)
         {
             using (StreamWriter sw = new StreamWriter(path))
             {
@@ -28,12 +30,13 @@ namespace Entidades
             bool respuesta = true;
 
 
-            ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            path = ruta + @"\volquetesDB";
-            Serializadora.ExisteArchivo(path);
+            //ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            //path = ruta + @"\volquetesDB";
+            path = @"..\..\..\..\DBxml\usuariosDB";
+            Serializadora.ExisteArchivoUsuario(path);
 
 
-            listaUsuarios = Serializadora.LeerXML(path);
+            listaUsuarios = Serializadora.LeerXMLUsuario(path);
 
             foreach (var item in listaUsuarios)
             {
@@ -47,14 +50,15 @@ namespace Entidades
             if (respuesta)
             {
                 listaUsuarios.Add(usuario);
-                Serializadora.EscribirXML(path, listaUsuarios);                
+                Serializadora.EscribirXMLUsuarios(path, listaUsuarios);                
             }
             return respuesta;
         }
 
-        public static List<Usuario> LeerXML(string path)
+        public static List<Usuario> LeerXMLUsuario(string path)
         {
             List<Usuario> listaUsuarios = null;
+            Serializadora.ExisteArchivoUsuario(path);
 
             using (StreamReader sr = new StreamReader(path))
             {
@@ -66,17 +70,107 @@ namespace Entidades
             return listaUsuarios;
         }
 
-        private static void ExisteArchivo(string path)
+        private static void ExisteArchivoUsuario(string path)
         {
             List<Usuario> listaVacia;
             listaVacia = new List<Usuario>();
 
             if (!File.Exists(path))
             {
-                Serializadora.EscribirXML(path, listaVacia);
+                Serializadora.EscribirXMLUsuarios(path, listaVacia);
+            }
+        }
+        #endregion
+
+        #region DBusuarioId
+        public static int LeerXMLUsuarioId(string path)
+        {
+            int idActual;
+            Serializadora.ExisteArchivoUsuarioId(path);
+
+            using (StreamReader sr = new StreamReader(path))
+            {
+                XmlSerializer des = new XmlSerializer(typeof(int));
+
+                idActual = (int)des.Deserialize(sr);
+            }
+            return idActual;
+        }
+
+        private static void ExisteArchivoUsuarioId(string path)
+        {
+            int usuarioId;
+            usuarioId = 1;
+
+            if (!File.Exists(path))
+            {
+                Serializadora.EscribirXMLUsuariosId(path, usuarioId);
+            }
+        }
+        public static void EscribirXMLUsuariosId(string path, int usuarioId)
+        {
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                XmlSerializer ser = new XmlSerializer(typeof(int));
+                ser.Serialize(sw, usuarioId);
+            }
+        }
+        #endregion
+
+        #region Dbvolquetes      
+        private static void EscribirXMLVolquetes(string path, List<Volquete> volquete)
+        {
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                XmlSerializer ser = new XmlSerializer(typeof(List<Volquete>));
+                ser.Serialize(sw, volquete);
             }
         }
 
+        public static List<Volquete> LeerXMLVolquete(string path)
+        {
+            List<Volquete> listaVolquetes = null;
+            Serializadora.ExisteArchivoUsuario(path);
+
+            using (StreamReader sr = new StreamReader(path))
+            {
+                XmlSerializer des = new XmlSerializer(typeof(List<Volquete>));
+
+                listaVolquetes = (List<Volquete>)des.Deserialize(sr);
+            }
+
+            return listaVolquetes;
+        }
+
+        private static void ExisteArchivoVolquete(string path)
+        {
+            List<Volquete> listaVacia = new List<Volquete>();
+
+            if (!File.Exists(path))
+            {
+                Serializadora.EscribirXMLVolquetes(path, listaVacia);
+            }
+        }
+
+        public static bool AgregarVolquete(Volquete volquete)
+        {
+            string ruta;
+            string path;
+            List<Volquete> listaVolquetes;
+            bool respuesta = true;
+
+            path = @"..\..\..\..\DBxml\volquetesDB";
+            Serializadora.ExisteArchivoVolquete(path);
+
+
+            listaVolquetes = Serializadora.LeerXMLVolquete(path);
+
+
+            listaVolquetes.Add(volquete);
+            Serializadora.EscribirXMLVolquetes(path, listaVolquetes);
+            return respuesta;
+        }
+        #endregion
     }
 
 }

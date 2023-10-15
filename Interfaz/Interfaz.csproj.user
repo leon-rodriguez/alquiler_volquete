@@ -4,13 +4,22 @@
     <Compile Update="AdministradorUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AlquileresUsuario.cs">
+    <Compile Update="AñadirVolquete.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="HomeVolquetes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PrimeraPantallaVolquetes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="VolqueteCard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Volquetes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Registro.cs">

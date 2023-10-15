@@ -1,5 +1,6 @@
 using Entidades;
 using System.Collections.Generic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Interfaz
 {
@@ -25,7 +26,7 @@ namespace Interfaz
 
             if (user.IniciarSesion())
             {
-                HomeVolquetes homeVolquetes = new HomeVolquetes();
+                HomeVolquetes homeVolquetes = new HomeVolquetes(user);
                 homeVolquetes.Show();
                 this.Hide();
             }
@@ -33,7 +34,6 @@ namespace Interfaz
             {
                 MessageBox.Show("No hay ninguna cuenta que coincida con estos datos, reviselos cuidadosamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }

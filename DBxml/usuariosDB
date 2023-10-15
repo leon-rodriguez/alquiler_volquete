@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUsuario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Usuario>
+    <Username>a</Username>
+    <Contraseña>a</Contraseña>
+    <Mail>a@gmail.com</Mail>
+    <Rol>usuario</Rol>
+    <Id>2</Id>
+  </Usuario>
+  <Usuario>
+    <Username>avichuela</Username>
+    <Contraseña>capicua</Contraseña>
+    <Mail>avrilcaprara20@gmail.com</Mail>
+    <Rol>usuario</Rol>
+    <Id>3</Id>
+  </Usuario>
+  <Usuario>
+    <Username>mesi</Username>
+    <Contraseña>mesi</Contraseña>
+    <Mail>mesi@gmail.com</Mail>
+    <Rol>usuario</Rol>
+    <Id>4</Id>
+  </Usuario>
+</ArrayOfUsuario>

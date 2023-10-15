@@ -31,16 +31,15 @@
             panelMenuLateral = new Panel();
             panelCuentaSubmenu = new Panel();
             btnAdministrarUsuarios = new Button();
-            button6 = new Button();
+            btnContacto = new Button();
             btnAlquileresUsuario = new Button();
             btnCuenta = new Button();
             panelVolquetesSubmenu = new Panel();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
+            btnAñadirVolquete = new Button();
+            btnVerVolquetesResiduos = new Button();
+            btnVerConstruccion = new Button();
             btnVolquetes = new Button();
             panelLogo = new Panel();
-            panelHijoInicio = new Panel();
             panelMenuLateral.SuspendLayout();
             panelCuentaSubmenu.SuspendLayout();
             panelVolquetesSubmenu.SuspendLayout();
@@ -65,7 +64,7 @@
             // 
             panelCuentaSubmenu.BackColor = Color.DimGray;
             panelCuentaSubmenu.Controls.Add(btnAdministrarUsuarios);
-            panelCuentaSubmenu.Controls.Add(button6);
+            panelCuentaSubmenu.Controls.Add(btnContacto);
             panelCuentaSubmenu.Controls.Add(btnAlquileresUsuario);
             panelCuentaSubmenu.Dock = DockStyle.Top;
             panelCuentaSubmenu.Location = new Point(0, 334);
@@ -83,26 +82,26 @@
             btnAdministrarUsuarios.ForeColor = Color.White;
             btnAdministrarUsuarios.Location = new Point(0, 90);
             btnAdministrarUsuarios.Name = "btnAdministrarUsuarios";
-            btnAdministrarUsuarios.Size = new Size(250, 44);
+            btnAdministrarUsuarios.Size = new Size(250, 45);
             btnAdministrarUsuarios.TabIndex = 5;
             btnAdministrarUsuarios.Text = "Administrar usuarios";
             btnAdministrarUsuarios.UseVisualStyleBackColor = false;
             btnAdministrarUsuarios.Click += btnAdministrarUsuarios_Click;
             // 
-            // button6
+            // btnContacto
             // 
-            button6.BackColor = Color.FromArgb(64, 64, 64);
-            button6.Dock = DockStyle.Top;
-            button6.FlatAppearance.BorderColor = Color.White;
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(0, 45);
-            button6.Name = "button6";
-            button6.Size = new Size(250, 45);
-            button6.TabIndex = 4;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = false;
+            btnContacto.BackColor = Color.FromArgb(64, 64, 64);
+            btnContacto.Dock = DockStyle.Top;
+            btnContacto.FlatAppearance.BorderColor = Color.White;
+            btnContacto.FlatAppearance.BorderSize = 0;
+            btnContacto.FlatStyle = FlatStyle.Flat;
+            btnContacto.ForeColor = Color.White;
+            btnContacto.Location = new Point(0, 45);
+            btnContacto.Name = "btnContacto";
+            btnContacto.Size = new Size(250, 45);
+            btnContacto.TabIndex = 4;
+            btnContacto.Text = "Contactanos";
+            btnContacto.UseVisualStyleBackColor = false;
             // 
             // btnAlquileresUsuario
             // 
@@ -138,59 +137,62 @@
             // panelVolquetesSubmenu
             // 
             panelVolquetesSubmenu.BackColor = Color.DimGray;
-            panelVolquetesSubmenu.Controls.Add(button4);
-            panelVolquetesSubmenu.Controls.Add(button3);
-            panelVolquetesSubmenu.Controls.Add(button2);
+            panelVolquetesSubmenu.Controls.Add(btnAñadirVolquete);
+            panelVolquetesSubmenu.Controls.Add(btnVerVolquetesResiduos);
+            panelVolquetesSubmenu.Controls.Add(btnVerConstruccion);
             panelVolquetesSubmenu.Dock = DockStyle.Top;
             panelVolquetesSubmenu.Location = new Point(0, 150);
             panelVolquetesSubmenu.Name = "panelVolquetesSubmenu";
             panelVolquetesSubmenu.Size = new Size(250, 134);
             panelVolquetesSubmenu.TabIndex = 3;
             // 
-            // button4
+            // btnAñadirVolquete
             // 
-            button4.BackColor = Color.FromArgb(64, 64, 64);
-            button4.Dock = DockStyle.Top;
-            button4.FlatAppearance.BorderColor = Color.White;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(0, 90);
-            button4.Name = "button4";
-            button4.Size = new Size(250, 44);
-            button4.TabIndex = 5;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = false;
+            btnAñadirVolquete.BackColor = Color.FromArgb(64, 64, 64);
+            btnAñadirVolquete.Dock = DockStyle.Top;
+            btnAñadirVolquete.FlatAppearance.BorderColor = Color.White;
+            btnAñadirVolquete.FlatAppearance.BorderSize = 0;
+            btnAñadirVolquete.FlatStyle = FlatStyle.Flat;
+            btnAñadirVolquete.ForeColor = Color.White;
+            btnAñadirVolquete.Location = new Point(0, 90);
+            btnAñadirVolquete.Name = "btnAñadirVolquete";
+            btnAñadirVolquete.Size = new Size(250, 44);
+            btnAñadirVolquete.TabIndex = 5;
+            btnAñadirVolquete.Text = "Añadir stock";
+            btnAñadirVolquete.UseVisualStyleBackColor = false;
+            btnAñadirVolquete.Click += btnAñadirVolquete_Click;
             // 
-            // button3
+            // btnVerVolquetesResiduos
             // 
-            button3.BackColor = Color.FromArgb(64, 64, 64);
-            button3.Dock = DockStyle.Top;
-            button3.FlatAppearance.BorderColor = Color.White;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(0, 45);
-            button3.Name = "button3";
-            button3.Size = new Size(250, 45);
-            button3.TabIndex = 4;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = false;
+            btnVerVolquetesResiduos.BackColor = Color.FromArgb(64, 64, 64);
+            btnVerVolquetesResiduos.Dock = DockStyle.Top;
+            btnVerVolquetesResiduos.FlatAppearance.BorderColor = Color.White;
+            btnVerVolquetesResiduos.FlatAppearance.BorderSize = 0;
+            btnVerVolquetesResiduos.FlatStyle = FlatStyle.Flat;
+            btnVerVolquetesResiduos.ForeColor = Color.White;
+            btnVerVolquetesResiduos.Location = new Point(0, 45);
+            btnVerVolquetesResiduos.Name = "btnVerVolquetesResiduos";
+            btnVerVolquetesResiduos.Size = new Size(250, 45);
+            btnVerVolquetesResiduos.TabIndex = 4;
+            btnVerVolquetesResiduos.Text = "Volquetes residuos";
+            btnVerVolquetesResiduos.UseVisualStyleBackColor = false;
+            btnVerVolquetesResiduos.Click += btnVerVolquetesResiduos_Click;
             // 
-            // button2
+            // btnVerConstruccion
             // 
-            button2.BackColor = Color.FromArgb(64, 64, 64);
-            button2.Dock = DockStyle.Top;
-            button2.FlatAppearance.BorderColor = Color.White;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(0, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(250, 45);
-            button2.TabIndex = 3;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = false;
+            btnVerConstruccion.BackColor = Color.FromArgb(64, 64, 64);
+            btnVerConstruccion.Dock = DockStyle.Top;
+            btnVerConstruccion.FlatAppearance.BorderColor = Color.White;
+            btnVerConstruccion.FlatAppearance.BorderSize = 0;
+            btnVerConstruccion.FlatStyle = FlatStyle.Flat;
+            btnVerConstruccion.ForeColor = Color.White;
+            btnVerConstruccion.Location = new Point(0, 0);
+            btnVerConstruccion.Name = "btnVerConstruccion";
+            btnVerConstruccion.Size = new Size(250, 45);
+            btnVerConstruccion.TabIndex = 3;
+            btnVerConstruccion.Text = "Volquetes contruccion";
+            btnVerConstruccion.UseVisualStyleBackColor = false;
+            btnVerConstruccion.Click += btnVerConstruccion_Click;
             // 
             // btnVolquetes
             // 
@@ -216,23 +218,14 @@
             panelLogo.Size = new Size(250, 100);
             panelLogo.TabIndex = 1;
             // 
-            // panelHijoInicio
-            // 
-            panelHijoInicio.BackColor = Color.FromArgb(192, 192, 255);
-            panelHijoInicio.Dock = DockStyle.Fill;
-            panelHijoInicio.Location = new Point(250, 0);
-            panelHijoInicio.Name = "panelHijoInicio";
-            panelHijoInicio.Size = new Size(968, 713);
-            panelHijoInicio.TabIndex = 1;
-            // 
             // HomeVolquetes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1218, 713);
-            Controls.Add(panelHijoInicio);
             Controls.Add(panelMenuLateral);
+            IsMdiContainer = true;
             Name = "HomeVolquetes";
             Text = "HomeVolquetes";
             panelMenuLateral.ResumeLayout(false);
@@ -247,14 +240,13 @@
         private Button btnVolquetes;
         private Panel panelLogo;
         private Panel panelVolquetesSubmenu;
-        private Button button2;
-        private Button button4;
-        private Button button3;
+        private Button btnVerConstruccion;
+        private Button btnAñadirVolquete;
+        private Button btnVerVolquetesResiduos;
         private Panel panelCuentaSubmenu;
         private Button btnAdministrarUsuarios;
-        private Button button6;
+        private Button btnContacto;
         private Button btnAlquileresUsuario;
         private Button btnCuenta;
-        private Panel panelHijoInicio;
     }
 }

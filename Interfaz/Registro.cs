@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,8 +30,9 @@ namespace Interfaz
 
             if (usuario.ValidarRegistro(contraseña1))
             {
+                usuario.AsignarId();
                 Serializadora.AgregarUsuario(usuario);
-                HomeVolquetes homeVolquetes = new HomeVolquetes();
+                HomeVolquetes homeVolquetes = new HomeVolquetes(usuario);
                 homeVolquetes.Show();
                 this.Hide();
             }
