@@ -9,11 +9,12 @@ namespace Entidades
 {
     [Serializable]
     [XmlInclude(typeof(Usuario))]
+    [XmlInclude(typeof(Volquete))]
 
     public class Serializadora{
 
         #region Dbusuarios      
-        private static void EscribirXMLUsuarios(string path, List<Usuario> usuario)
+        public static void EscribirXMLUsuarios(string path, List<Usuario> usuario)
         {
             using (StreamWriter sw = new StreamWriter(path))
             {
@@ -83,10 +84,10 @@ namespace Entidades
         #endregion
 
         #region DBusuarioId
-        public static int LeerXMLUsuarioId(string path)
+        public static int LeerXMLId(string path)
         {
             int idActual;
-            Serializadora.ExisteArchivoUsuarioId(path);
+            Serializadora.ExisteArchivoId(path);
 
             using (StreamReader sr = new StreamReader(path))
             {
@@ -97,28 +98,28 @@ namespace Entidades
             return idActual;
         }
 
-        private static void ExisteArchivoUsuarioId(string path)
+        private static void ExisteArchivoId(string path)
         {
-            int usuarioId;
-            usuarioId = 1;
+            int id;
+            id = 1;
 
             if (!File.Exists(path))
             {
-                Serializadora.EscribirXMLUsuariosId(path, usuarioId);
+                Serializadora.EscribirXMLId(path, id);
             }
         }
-        public static void EscribirXMLUsuariosId(string path, int usuarioId)
+        public static void EscribirXMLId(string path, int id)
         {
             using (StreamWriter sw = new StreamWriter(path))
             {
                 XmlSerializer ser = new XmlSerializer(typeof(int));
-                ser.Serialize(sw, usuarioId);
+                ser.Serialize(sw, id);
             }
         }
         #endregion
 
         #region Dbvolquetes      
-        private static void EscribirXMLVolquetes(string path, List<Volquete> volquete)
+        public static void EscribirXMLVolquetes(string path, List<Volquete> volquete)
         {
             using (StreamWriter sw = new StreamWriter(path))
             {
@@ -130,7 +131,7 @@ namespace Entidades
         public static List<Volquete> LeerXMLVolquete(string path)
         {
             List<Volquete> listaVolquetes = null;
-            Serializadora.ExisteArchivoUsuario(path);
+            Serializadora.ExisteArchivoVolquete(path);
 
             using (StreamReader sr = new StreamReader(path))
             {

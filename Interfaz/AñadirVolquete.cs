@@ -32,6 +32,14 @@ namespace Interfaz
             if (volquete.ValidarVolquete(txtPrecioVolquete.Text, txtCapacidadVolquete.Text, tipo, descripcion))
             {
                 Serializadora.AgregarVolquete(volquete);
+                txtPrecioVolquete.Text = "";
+                txtCapacidadVolquete.Text = "";
+                txtDescripcionVolquete.Text = "";
+                MessageBox.Show("Volquete añadido exitosamente", "Volquete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Los datos introducidos son erroneos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

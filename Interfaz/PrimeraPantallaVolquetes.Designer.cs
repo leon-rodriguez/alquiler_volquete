@@ -164,6 +164,7 @@
             btnVerResiduos.TabIndex = 0;
             btnVerResiduos.Text = "Alquilar";
             btnVerResiduos.UseVisualStyleBackColor = false;
+            btnVerResiduos.Click += btnVerResiduos_Click;
             // 
             // panel7
             // 

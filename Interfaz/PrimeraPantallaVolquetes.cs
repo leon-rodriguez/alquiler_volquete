@@ -13,13 +13,23 @@ namespace Interfaz
 {
     public partial class PrimeraPantallaVolquetes : Form
     {
-        public PrimeraPantallaVolquetes()
+        private HomeVolquetes formPadre;
+        private Form formActivo;
+        public PrimeraPantallaVolquetes(HomeVolquetes formPadre, Form formActivo)
         {
             InitializeComponent();
+            this.formPadre = formPadre;
+            this.formActivo = formActivo;
         }
 
         private void btnVerConstruccion_Click(object sender, EventArgs e)
         {
+            formPadre.rellenarListBox(TiposVolquete.construccion, false);
+        }
+
+        private void btnVerResiduos_Click(object sender, EventArgs e)
+        {
+            formPadre.rellenarListBox(TiposVolquete.residuos, false);
         }
     }
 }

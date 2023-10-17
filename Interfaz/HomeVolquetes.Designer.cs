@@ -31,7 +31,6 @@
             panelMenuLateral = new Panel();
             panelCuentaSubmenu = new Panel();
             btnAdministrarUsuarios = new Button();
-            btnContacto = new Button();
             btnAlquileresUsuario = new Button();
             btnCuenta = new Button();
             panelVolquetesSubmenu = new Panel();
@@ -64,12 +63,11 @@
             // 
             panelCuentaSubmenu.BackColor = Color.DimGray;
             panelCuentaSubmenu.Controls.Add(btnAdministrarUsuarios);
-            panelCuentaSubmenu.Controls.Add(btnContacto);
             panelCuentaSubmenu.Controls.Add(btnAlquileresUsuario);
             panelCuentaSubmenu.Dock = DockStyle.Top;
             panelCuentaSubmenu.Location = new Point(0, 334);
             panelCuentaSubmenu.Name = "panelCuentaSubmenu";
-            panelCuentaSubmenu.Size = new Size(250, 134);
+            panelCuentaSubmenu.Size = new Size(250, 88);
             panelCuentaSubmenu.TabIndex = 5;
             // 
             // btnAdministrarUsuarios
@@ -80,28 +78,13 @@
             btnAdministrarUsuarios.FlatAppearance.BorderSize = 0;
             btnAdministrarUsuarios.FlatStyle = FlatStyle.Flat;
             btnAdministrarUsuarios.ForeColor = Color.White;
-            btnAdministrarUsuarios.Location = new Point(0, 90);
+            btnAdministrarUsuarios.Location = new Point(0, 45);
             btnAdministrarUsuarios.Name = "btnAdministrarUsuarios";
             btnAdministrarUsuarios.Size = new Size(250, 45);
             btnAdministrarUsuarios.TabIndex = 5;
             btnAdministrarUsuarios.Text = "Administrar usuarios";
             btnAdministrarUsuarios.UseVisualStyleBackColor = false;
             btnAdministrarUsuarios.Click += btnAdministrarUsuarios_Click;
-            // 
-            // btnContacto
-            // 
-            btnContacto.BackColor = Color.FromArgb(64, 64, 64);
-            btnContacto.Dock = DockStyle.Top;
-            btnContacto.FlatAppearance.BorderColor = Color.White;
-            btnContacto.FlatAppearance.BorderSize = 0;
-            btnContacto.FlatStyle = FlatStyle.Flat;
-            btnContacto.ForeColor = Color.White;
-            btnContacto.Location = new Point(0, 45);
-            btnContacto.Name = "btnContacto";
-            btnContacto.Size = new Size(250, 45);
-            btnContacto.TabIndex = 4;
-            btnContacto.Text = "Contactanos";
-            btnContacto.UseVisualStyleBackColor = false;
             // 
             // btnAlquileresUsuario
             // 
@@ -245,7 +228,6 @@
         private Button btnVerVolquetesResiduos;
         private Panel panelCuentaSubmenu;
         private Button btnAdministrarUsuarios;
-        private Button btnContacto;
         private Button btnAlquileresUsuario;
         private Button btnCuenta;
     }

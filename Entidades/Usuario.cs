@@ -18,6 +18,12 @@ namespace Entidades
         {
             
         }
+        public Usuario(string username, string contraseña, string mail)
+        {
+            this.Username = username;
+            this.Contraseña = contraseña;
+            this.Mail = mail;
+        }
         public Usuario(string username, string contraseña, string mail, Roles rol)
         {
             this.Username = username;
@@ -43,6 +49,7 @@ namespace Entidades
                 {
                     this.mail = item.mail;
                     this.Rol = item.rol;
+                    this.id = item.id;
                     resultado = true;
                     break;
                 }
@@ -91,9 +98,9 @@ namespace Entidades
 
         private int GenerarId()
         { 
-            int actualId = Serializadora.LeerXMLUsuarioId(@"..\..\..\..\DBxml\actualIdDB");
+            int actualId = Serializadora.LeerXMLId(@"..\..\..\..\DBxml\actualUsuarioIdDB");
             int idAsignable = actualId + 1;
-            Serializadora.EscribirXMLUsuariosId(@"..\..\..\..\DBxml\actualIdDB", idAsignable);
+            Serializadora.EscribirXMLId(@"..\..\..\..\DBxml\actualUsuarioIdDB", idAsignable);
 
             return idAsignable;
         }

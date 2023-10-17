@@ -10,16 +10,19 @@
     <Compile Update="HomeVolquetes.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="LineaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MensajeNoDisponible.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="PrimeraPantallaVolquetes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="VolqueteCard.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Volquetes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Registro.cs">

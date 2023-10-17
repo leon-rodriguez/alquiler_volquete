@@ -4,21 +4,14 @@
     <Username>a</Username>
     <Contraseña>a</Contraseña>
     <Mail>a@gmail.com</Mail>
-    <Rol>usuario</Rol>
+    <Rol>superUsuario</Rol>
     <Id>2</Id>
   </Usuario>
   <Usuario>
-    <Username>avichuela</Username>
-    <Contraseña>capicua</Contraseña>
-    <Mail>avrilcaprara20@gmail.com</Mail>
-    <Rol>usuario</Rol>
-    <Id>3</Id>
-  </Usuario>
-  <Usuario>
-    <Username>mesi</Username>
-    <Contraseña>mesi</Contraseña>
-    <Mail>mesi@gmail.com</Mail>
-    <Rol>usuario</Rol>
-    <Id>4</Id>
+    <Username>c</Username>
+    <Contraseña>c</Contraseña>
+    <Mail>c@yahoo.com</Mail>
+    <Rol>administrador</Rol>
+    <Id>6</Id>
   </Usuario>
 </ArrayOfUsuario>

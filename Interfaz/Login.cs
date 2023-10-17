@@ -9,7 +9,21 @@ namespace Interfaz
         public Login()
         {
             InitializeComponent();
+            //crearSuperUsuario();
         }
+
+        /*private void crearSuperUsuario()
+        {
+            List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(@"..\..\..\..\DBxml\usuariosDB");
+            foreach (Usuario item in listaUsuarios)
+            {
+                if (item.Username == "a")
+                {
+                    item.Rol = Roles.superUsuario;
+                }
+            }
+            Serializadora.EscribirXMLUsuarios(@"..\..\..\..\DBxml\usuariosDB", listaUsuarios);
+        }*/
 
         private void btnRegistrarse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -22,13 +36,24 @@ namespace Interfaz
         {
             string userName = txtUser.Text;
             string contraseña = txtContraseña.Text;
-            Usuario user = new Usuario(userName, contraseña, "", Roles.usuario);
+            Usuario usuarioProvicional = new Usuario(userName, contraseña, "", Roles.usuario);
 
-            if (user.IniciarSesion())
+            if (usuarioProvicional.IniciarSesion())
             {
-                HomeVolquetes homeVolquetes = new HomeVolquetes(user);
-                homeVolquetes.Show();
-                this.Hide();
+                if (usuarioProvicional.Rol == Roles.superUsuario)
+                {
+                    SuperUsuario usuarioSuper = new SuperUsuario(userName, contraseña, "", Roles.superUsuario);
+                    usuarioSuper.IniciarSesion();
+                    HomeVolquetes homeVolquetes = new HomeVolquetes(usuarioSuper);
+                    homeVolquetes.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    HomeVolquetes homeVolquetes = new HomeVolquetes(usuarioProvicional);
+                    homeVolquetes.Show();
+                    this.Hide();
+                }
             }
             else
             {
