@@ -26,7 +26,7 @@ namespace Interfaz
             string contraseña2 = txtConfirmarContraseña.Text;
             string mail = txtMailRegistro.Text;
 
-            Usuario usuario = new Usuario(userName, contraseña2, mail, Roles.usuario);
+            UsuarioComun usuario = new UsuarioComun(userName, contraseña2, mail, Roles.usuario);
 
             if (usuario.ValidarRegistro(contraseña1))
             {

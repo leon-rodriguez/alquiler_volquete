@@ -96,4 +96,52 @@
     <IdUsuarioReserva>0</IdUsuarioReserva>
     <Id>23</Id>
   </Volquete>
+  <Volquete>
+    <Tipo>residuos</Tipo>
+    <Descripcion>pkla</Descripcion>
+    <Precio>12</Precio>
+    <Capacidad>12</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+    <Id>25</Id>
+  </Volquete>
+  <Volquete>
+    <Tipo>residuos</Tipo>
+    <Descripcion>c</Descripcion>
+    <Precio>12</Precio>
+    <Capacidad>213</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+    <Id>26</Id>
+  </Volquete>
+  <Volquete>
+    <Tipo>construccion</Tipo>
+    <Descripcion>v</Descripcion>
+    <Precio>213</Precio>
+    <Capacidad>213</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+    <Id>27</Id>
+  </Volquete>
+  <Volquete>
+    <Tipo>construccion</Tipo>
+    <Descripcion>a</Descripcion>
+    <Precio>2</Precio>
+    <Capacidad>2</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+    <Id>28</Id>
+  </Volquete>
+  <Volquete>
+    <Tipo>residuos</Tipo>
+    <Descripcion>esto anda¿</Descripcion>
+    <Precio>100</Precio>
+    <Capacidad>100</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+    <Id>29</Id>
+  </Volquete>
+  <Volquete>
+    <Tipo>construccion</Tipo>
+    <Descripcion>esto anda x2</Descripcion>
+    <Precio>150</Precio>
+    <Capacidad>1</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+    <Id>30</Id>
+  </Volquete>
 </ArrayOfVolquete>

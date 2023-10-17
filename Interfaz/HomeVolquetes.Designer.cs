@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panelMenuLateral = new Panel();
+            btnCerrarSesion = new Button();
             panelCuentaSubmenu = new Panel();
             btnAdministrarUsuarios = new Button();
             btnAlquileresUsuario = new Button();
@@ -48,6 +49,7 @@
             // 
             panelMenuLateral.AutoScroll = true;
             panelMenuLateral.BackColor = Color.Black;
+            panelMenuLateral.Controls.Add(btnCerrarSesion);
             panelMenuLateral.Controls.Add(panelCuentaSubmenu);
             panelMenuLateral.Controls.Add(btnCuenta);
             panelMenuLateral.Controls.Add(panelVolquetesSubmenu);
@@ -58,6 +60,22 @@
             panelMenuLateral.Name = "panelMenuLateral";
             panelMenuLateral.Size = new Size(250, 713);
             panelMenuLateral.TabIndex = 0;
+            // 
+            // btnCerrarSesion
+            // 
+            btnCerrarSesion.BackColor = Color.FromArgb(64, 64, 64);
+            btnCerrarSesion.Dock = DockStyle.Bottom;
+            btnCerrarSesion.FlatAppearance.BorderColor = Color.White;
+            btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            btnCerrarSesion.FlatStyle = FlatStyle.Flat;
+            btnCerrarSesion.ForeColor = Color.White;
+            btnCerrarSesion.Location = new Point(0, 668);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(250, 45);
+            btnCerrarSesion.TabIndex = 6;
+            btnCerrarSesion.Text = "Cerrar sesion";
+            btnCerrarSesion.UseVisualStyleBackColor = false;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // panelCuentaSubmenu
             // 
@@ -195,6 +213,8 @@
             // panelLogo
             // 
             panelLogo.BackColor = Color.IndianRed;
+            panelLogo.BackgroundImage = Properties.Resources.logo3;
+            panelLogo.BackgroundImageLayout = ImageLayout.Stretch;
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
@@ -209,6 +229,8 @@
             ClientSize = new Size(1218, 713);
             Controls.Add(panelMenuLateral);
             IsMdiContainer = true;
+            MaximumSize = new Size(1234, 752);
+            MinimumSize = new Size(1234, 752);
             Name = "HomeVolquetes";
             Text = "HomeVolquetes";
             panelMenuLateral.ResumeLayout(false);
@@ -230,5 +252,6 @@
         private Button btnAdministrarUsuarios;
         private Button btnAlquileresUsuario;
         private Button btnCuenta;
+        private Button btnCerrarSesion;
     }
 }

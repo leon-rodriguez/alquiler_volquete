@@ -30,14 +30,11 @@ namespace Entidades
             List<Usuario> listaUsuarios;
             bool respuesta = true;
 
-
-            //ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            //path = ruta + @"\volquetesDB";
-            path = @"..\..\..\..\DBxml\usuariosDB";
-            Serializadora.ExisteArchivoUsuario(path);
+            //path = @"..\..\..\..\DBxml\usuariosDB";
+            Serializadora.ExisteArchivoUsuario(RutasArchivos.usuariosDB);
 
 
-            listaUsuarios = Serializadora.LeerXMLUsuario(path);
+            listaUsuarios = Serializadora.LeerXMLUsuario(RutasArchivos.usuariosDB);
 
             foreach (var item in listaUsuarios)
             {
@@ -51,7 +48,7 @@ namespace Entidades
             if (respuesta)
             {
                 listaUsuarios.Add(usuario);
-                Serializadora.EscribirXMLUsuarios(path, listaUsuarios);                
+                Serializadora.EscribirXMLUsuarios(RutasArchivos.usuariosDB, listaUsuarios);                
             }
             return respuesta;
         }
@@ -83,7 +80,7 @@ namespace Entidades
         }
         #endregion
 
-        #region DBusuarioId
+        #region DBusuarioVolqueteId
         public static int LeerXMLId(string path)
         {
             int idActual;
@@ -143,7 +140,7 @@ namespace Entidades
             return listaVolquetes;
         }
 
-        private static void ExisteArchivoVolquete(string path)
+        public static void ExisteArchivoVolquete(string path)
         {
             List<Volquete> listaVacia = new List<Volquete>();
 
@@ -151,25 +148,6 @@ namespace Entidades
             {
                 Serializadora.EscribirXMLVolquetes(path, listaVacia);
             }
-        }
-
-        public static bool AgregarVolquete(Volquete volquete)
-        {
-            string ruta;
-            string path;
-            List<Volquete> listaVolquetes;
-            bool respuesta = true;
-
-            path = @"..\..\..\..\DBxml\volquetesDB";
-            Serializadora.ExisteArchivoVolquete(path);
-
-
-            listaVolquetes = Serializadora.LeerXMLVolquete(path);
-
-
-            listaVolquetes.Add(volquete);
-            Serializadora.EscribirXMLVolquetes(path, listaVolquetes);
-            return respuesta;
         }
         #endregion
     }

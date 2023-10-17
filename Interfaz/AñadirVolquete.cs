@@ -14,9 +14,11 @@ namespace Interfaz
 {
     public partial class AñadirVolquete : Form
     {
-        public AñadirVolquete()
+        Usuario usuario;
+        public AñadirVolquete(Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
         }
 
         private void btnAñadirVolquete_Click(object sender, EventArgs e)
@@ -31,7 +33,14 @@ namespace Interfaz
             Volquete volquete = new Volquete();
             if (volquete.ValidarVolquete(txtPrecioVolquete.Text, txtCapacidadVolquete.Text, tipo, descripcion))
             {
-                Serializadora.AgregarVolquete(volquete);
+                if (usuario is Administrador admin)
+                {
+                    admin.AgregarVolquete(volquete);
+                }
+                if (usuario is SuperUsuario super)
+                {
+                    super.AgregarVolquete(volquete);
+                }
                 txtPrecioVolquete.Text = "";
                 txtCapacidadVolquete.Text = "";
                 txtDescripcionVolquete.Text = "";

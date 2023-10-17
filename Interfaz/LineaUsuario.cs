@@ -22,6 +22,7 @@ namespace Interfaz
             this.usuario = usuario;
             this.usuarioLogueado = usuarioLogeado;
             this.padreForm = formPadre;
+            Console.WriteLine("actual usuario id" + usuarioLogueado.Id);
 
             lblUsuario.Text = usuario.Username;
             lblContraseña.Text = usuario.Contraseña;
@@ -33,7 +34,11 @@ namespace Interfaz
         {
             if (usuarioLogueado is SuperUsuario superUsuario)
             {
-                superUsuario.EliminarUsuario(usuario.Id);
+                bool respuesta = superUsuario.EliminarUsuario(usuario.Id, usuarioLogueado.Id);
+                if (!respuesta)
+                {
+                    MessageBox.Show("No puedes eliminarte a vos mismo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 padreForm.listarUsuarios();
             }
         }

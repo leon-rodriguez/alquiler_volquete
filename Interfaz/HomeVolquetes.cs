@@ -40,7 +40,7 @@ namespace Interfaz
             }
             bool hayVolquetesDeMismoTipo = false;
 
-            List<Volquete> listaVolquetes = Serializadora.LeerXMLVolquete(@"..\..\..\..\DBxml\volquetesDB");
+            List<Volquete> listaVolquetes = Serializadora.LeerXMLVolquete(RutasArchivos.volqueteDB);
             if (listaVolquetes.Count == 0)
             {
                 mostrarMensajeNoDisponible("No hay volquetes disponibles\nEspere a que se reponga el stock\nMuchas Gracias.");
@@ -96,7 +96,7 @@ namespace Interfaz
                 }
             }
 
-            List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(@"..\..\..\..\DBxml\usuariosDB");
+            List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(RutasArchivos.usuariosDB);
             if (listaUsuarios.Count == 0)
             {
                 mostrarMensajeNoDisponible("No existen usuarios :C");
@@ -140,7 +140,7 @@ namespace Interfaz
                 }
             }
 
-            List<Volquete> listaVolquetes = Serializadora.LeerXMLVolquete(@"..\..\..\..\DBxml\volquetesDB");
+            List<Volquete> listaVolquetes = Serializadora.LeerXMLVolquete(RutasArchivos.volqueteDB);
             if (listaVolquetes.Count == 0)
             {
                 mostrarMensajeNoDisponible("No tienes reservas");
@@ -236,7 +236,7 @@ namespace Interfaz
 
         private void aplicarVisibilidades()
         {
-            if (usuarioActual.Rol == Roles.usuario)
+            if (usuarioActual is UsuarioComun)
             {
                 btnAdministrarUsuarios.Visible = false;
                 btnAñadirVolquete.Visible = false;
@@ -268,8 +268,7 @@ namespace Interfaz
 
         private void btnAñadirVolquete_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new AñadirVolquete());
-
+            abrirFormulario(new AñadirVolquete(usuarioActual));
         }
 
 
@@ -286,6 +285,13 @@ namespace Interfaz
         private void btnAlquileresUsuario_Click(object sender, EventArgs e)
         {
             rellenarListBoxAdministrar(true);
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
         }
     }
 }

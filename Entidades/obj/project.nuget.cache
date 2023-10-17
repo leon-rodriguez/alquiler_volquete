@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "71BbuE1YjOkG9AyxHpBdzAWaFamV1REpEU39Bc3A7n6aktK+crv58qB+r5EM8e6vDTzVDPFTSQgGzjrsUz4YCw==",
+  "dgSpecHash": "iwEwA9WjlhLYlfddTorFkqDRCYaKPi1h9noj1DNMmziV0kaPb+L7hIRt3e6qT7l2UMgwbKel2zzK71Ghyq8Vug==",
   "success": true,
   "projectFilePath": "C:\\Users\\leonr\\source\\repos\\volquete\\Entidades\\Entidades.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\leonr\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

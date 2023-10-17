@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUsuario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Usuario>
+  <Usuario xsi:type="UsuarioComun">
     <Username>a</Username>
     <Contraseña>a</Contraseña>
     <Mail>a@gmail.com</Mail>
     <Rol>superUsuario</Rol>
-    <Id>2</Id>
-  </Usuario>
-  <Usuario>
-    <Username>c</Username>
-    <Contraseña>c</Contraseña>
-    <Mail>c@yahoo.com</Mail>
-    <Rol>administrador</Rol>
-    <Id>6</Id>
+    <Id>9</Id>
   </Usuario>
 </ArrayOfUsuario>

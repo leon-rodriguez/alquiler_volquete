@@ -84,9 +84,9 @@ namespace Entidades
 
         private int GenerarId()
         {
-            int actualId = Serializadora.LeerXMLId(@"..\..\..\..\DBxml\actualVolqueteIdDB");
+            int actualId = Serializadora.LeerXMLId(RutasArchivos.idVolqueteDB);
             int idAsignable = actualId + 1;
-            Serializadora.EscribirXMLId(@"..\..\..\..\DBxml\actualVolqueteIdDB", idAsignable);
+            Serializadora.EscribirXMLId(RutasArchivos.idVolqueteDB, idAsignable);
 
             return idAsignable;
         }
@@ -95,7 +95,7 @@ namespace Entidades
         {
             if (usuarioId > 0) 
             {
-                List<Volquete> listaVolquetes = Serializadora.LeerXMLVolquete(@"..\..\..\..\DBxml\volquetesDB");
+                List<Volquete> listaVolquetes = Serializadora.LeerXMLVolquete(RutasArchivos.volqueteDB);
                 foreach (Volquete volquete in listaVolquetes)
                 {
                     if (this == volquete)
@@ -106,7 +106,7 @@ namespace Entidades
                         break;
                     }
                 }
-                Serializadora.EscribirXMLVolquetes(@"..\..\..\..\DBxml\volquetesDB", listaVolquetes);
+                Serializadora.EscribirXMLVolquetes(RutasArchivos.volqueteDB, listaVolquetes);
             }
             
         }
@@ -115,7 +115,7 @@ namespace Entidades
         {
             if (usuarioId > 0)
             {
-                List<Volquete> listaVolquetes = Serializadora.LeerXMLVolquete(@"..\..\..\..\DBxml\volquetesDB");
+                List<Volquete> listaVolquetes = Serializadora.LeerXMLVolquete(RutasArchivos.volqueteDB);
                 foreach (Volquete volquete in listaVolquetes)
                 {
                     if (this == volquete)
@@ -124,7 +124,7 @@ namespace Entidades
                         break;
                     }
                 }
-                Serializadora.EscribirXMLVolquetes(@"..\..\..\..\DBxml\volquetesDB", listaVolquetes);
+                Serializadora.EscribirXMLVolquetes(RutasArchivos.volqueteDB, listaVolquetes);
             }
 
         }

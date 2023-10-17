@@ -6,6 +6,8 @@ namespace Entidades
     [Serializable]
     [XmlInclude(typeof(Usuario))]
     [XmlInclude(typeof(UsuarioComun))]
+    [XmlInclude(typeof(Administrador))]
+    [XmlInclude(typeof(SuperUsuario))]
     public class Usuario
     {
         private int id;
@@ -41,7 +43,7 @@ namespace Entidades
         public bool IniciarSesion()
         {
             bool resultado = false;
-            List<Usuario> usuarios = Serializadora.LeerXMLUsuario(@"..\..\..\..\DBxml\usuariosDB");
+            List<Usuario> usuarios = Serializadora.LeerXMLUsuario(RutasArchivos.usuariosDB);
 
             foreach (var item in usuarios)
             {
@@ -98,9 +100,9 @@ namespace Entidades
 
         private int GenerarId()
         { 
-            int actualId = Serializadora.LeerXMLId(@"..\..\..\..\DBxml\actualUsuarioIdDB");
+            int actualId = Serializadora.LeerXMLId(RutasArchivos.idUsuarioDB);
             int idAsignable = actualId + 1;
-            Serializadora.EscribirXMLId(@"..\..\..\..\DBxml\actualUsuarioIdDB", idAsignable);
+            Serializadora.EscribirXMLId(RutasArchivos.idUsuarioDB, idAsignable);
 
             return idAsignable;
         }

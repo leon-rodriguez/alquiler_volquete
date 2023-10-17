@@ -48,9 +48,18 @@ namespace Interfaz
                     homeVolquetes.Show();
                     this.Hide();
                 }
+                else if (usuarioProvicional.Rol == Roles.administrador)
+                {
+                    Administrador usuarioAdmin = new Administrador(userName, contraseña, "", Roles.administrador);
+                    usuarioAdmin.IniciarSesion();
+                    HomeVolquetes homeVolquetes = new HomeVolquetes(usuarioAdmin);
+                    homeVolquetes.Show();
+                    this.Hide();
+                }
                 else
                 {
-                    HomeVolquetes homeVolquetes = new HomeVolquetes(usuarioProvicional);
+                    Administrador usuarioComun = new Administrador(userName, contraseña, "", Roles.usuario);
+                    HomeVolquetes homeVolquetes = new HomeVolquetes(usuarioComun);
                     homeVolquetes.Show();
                     this.Hide();
                 }

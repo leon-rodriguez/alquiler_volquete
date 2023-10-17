@@ -15,11 +15,29 @@ namespace Entidades
         {
         }
 
-        public void EliminarUsuario(int usuarioId)
+        public bool EliminarUsuario(int usuarioId, int usuarioLogueadoId)
         {
-            List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(@"..\..\..\..\DBxml\usuariosDB");
+            if (usuarioId == usuarioLogueadoId)
+            {
+                return false;
+            }
+            //eliminar usuario
+            List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(RutasArchivos.usuariosDB);
             listaUsuarios.RemoveAll(usuario => usuario.Id == usuarioId);
-            Serializadora.EscribirXMLUsuarios(@"..\..\..\..\DBxml\usuariosDB", listaUsuarios);
+            Serializadora.EscribirXMLUsuarios(RutasArchivos.usuariosDB, listaUsuarios);
+
+            //desocupar los volquetes usados por ese usuario
+            List<Volquete> listaVolquetes = Serializadora.LeerXMLVolquete(RutasArchivos.volqueteDB);
+            foreach (Volquete volquete in listaVolquetes)
+            {
+                if (volquete.IdUsuarioReserva == usuarioId)
+                {
+                    volquete.IdUsuarioReserva = 0;
+                }
+            }
+            Serializadora.EscribirXMLVolquetes(RutasArchivos.volqueteDB, listaVolquetes);
+
+            return true;
         }
 
         public bool CambiarRoles(Roles rolActual, int usuarioId, int usuarioLogueadoId)
@@ -43,7 +61,7 @@ namespace Entidades
 
             Roles rolAAsignar = (Roles)Enum.ToObject(typeof(Roles), rolActualNumero);
 
-            List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(@"..\..\..\..\DBxml\usuariosDB");
+            List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(RutasArchivos.usuariosDB);
             foreach (Usuario usuario in listaUsuarios)
             {
                 if (usuario.Id == usuarioId)
@@ -51,8 +69,27 @@ namespace Entidades
                     usuario.Rol = rolAAsignar;
                 }
             }
-            Serializadora.EscribirXMLUsuarios(@"..\..\..\..\DBxml\usuariosDB", listaUsuarios);
+            Serializadora.EscribirXMLUsuarios(RutasArchivos.usuariosDB, listaUsuarios);
             return true;
+        }
+
+        public bool AgregarVolquete(Volquete volquete)
+        {
+            string ruta;
+            string path;
+            List<Volquete> listaVolquetes;
+            bool respuesta = true;
+
+            //path = @"..\..\..\..\DBxml\volquetesDB";
+            Serializadora.ExisteArchivoVolquete(RutasArchivos.volqueteDB);
+
+
+            listaVolquetes = Serializadora.LeerXMLVolquete(RutasArchivos.volqueteDB);
+
+
+            listaVolquetes.Add(volquete);
+            Serializadora.EscribirXMLVolquetes(RutasArchivos.volqueteDB, listaVolquetes);
+            return respuesta;
         }
     }
 }
