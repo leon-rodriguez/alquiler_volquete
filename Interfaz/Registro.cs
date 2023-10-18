@@ -29,10 +29,9 @@ namespace Interfaz
 
             UsuarioComun usuario = new UsuarioComun(userName, contraseña2, mail, Roles.usuario);
 
-            if (usuario.ValidarRegistro(contraseña1))
+            if (usuario.ValidarRegistro(contraseña1) && Serializadora.AgregarUsuario(usuario))
             {
                 usuario.AsignarId();
-                Serializadora.AgregarUsuario(usuario);
                 HomeVolquetes homeVolquetes = new HomeVolquetes(usuario);
                 homeVolquetes.Show();
                 this.Hide();

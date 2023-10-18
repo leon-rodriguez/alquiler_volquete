@@ -39,8 +39,7 @@ namespace Entidades
             {
                 if(usuario.Mail == item.Mail)
                 {
-                    respuesta = false;
-                    break;
+                    return false;
                 }
             }
 

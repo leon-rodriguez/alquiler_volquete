@@ -15,16 +15,16 @@ namespace Interfaz
         }
 
         //hace superusuario a determinado usuario ya creado en la db
-        /*private void crearSuperUsuario()
+        private void crearSuperUsuario(int usuarioId)
         {
             List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(@"..\..\..\..\DBxml\usuariosDB");
             int index = 0;
-            foreach (Usuario usuarioEncontrado in listaUsuarios)
+            foreach (Usuario usuario in listaUsuarios)
             {
-                if (usuarioEncontrado.Username == "a")
+                if (usuario.Id == usuarioId)
                 {
-                    SuperUsuario superUsuario = new SuperUsuario(usuarioEncontrado.Username, usuarioEncontrado.Contraseña, usuarioEncontrado.Mail, Roles.superUsuario);
-                    superUsuario.Id = usuarioEncontrado.Id;
+                    SuperUsuario superUsuario = new SuperUsuario(usuario.Username, usuario.Contraseña, usuario.Mail, Roles.superUsuario);
+                    superUsuario.Id = usuario.Id;
                     listaUsuarios.RemoveAt(index);
                     listaUsuarios.Insert(index, superUsuario);
                     break;
@@ -32,7 +32,7 @@ namespace Interfaz
                 index++;    
             }
             Serializadora.EscribirXMLUsuarios(@"..\..\..\..\DBxml\usuariosDB", listaUsuarios);
-        }*/
+        }
 
         private void btnRegistrarse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

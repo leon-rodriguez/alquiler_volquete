@@ -14,4 +14,18 @@
     <Rol>usuario</Rol>
     <Id>5</Id>
   </Usuario>
+  <Usuario xsi:type="SuperUsuario">
+    <Username>avril</Username>
+    <Contraseña>a</Contraseña>
+    <Mail>avril@gmail.com</Mail>
+    <Rol>superUsuario</Rol>
+    <Id>6</Id>
+  </Usuario>
+  <Usuario xsi:type="UsuarioComun">
+    <Username>mesi</Username>
+    <Contraseña>m</Contraseña>
+    <Mail>avion@gmail.com</Mail>
+    <Rol>usuario</Rol>
+    <Id>0</Id>
+  </Usuario>
 </ArrayOfUsuario>
