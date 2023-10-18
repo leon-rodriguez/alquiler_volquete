@@ -27,3 +27,4 @@ C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.VolqueteCard.resources
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.MensajeNoDisponible.resources
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.LineaUsuario.resources
+C:\Users\leonr\source\repos\volquete\Interfaz\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

@@ -30,5 +30,10 @@ namespace Entidades
             Serializadora.EscribirXMLVolquetes(RutasArchivos.volqueteDB, listaVolquetes);
             return respuesta;
         }
+
+        public override string DevolverRolString()
+        {
+            return "Administrador";
+        }
     }
 }

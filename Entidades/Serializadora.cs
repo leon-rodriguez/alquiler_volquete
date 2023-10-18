@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace Entidades
 {
@@ -86,19 +87,21 @@ namespace Entidades
             int idActual;
             Serializadora.ExisteArchivoId(path);
 
-            using (StreamReader sr = new StreamReader(path))
+            /*using (StreamReader sr = new StreamReader(path))
             {
                 XmlSerializer des = new XmlSerializer(typeof(int));
 
                 idActual = (int)des.Deserialize(sr);
-            }
+            }*/
+            string json = File.ReadAllText(path);
+            idActual = JsonConvert.DeserializeObject<int>(json);
+
             return idActual;
         }
 
         private static void ExisteArchivoId(string path)
         {
-            int id;
-            id = 1;
+            int id = 1;
 
             if (!File.Exists(path))
             {
@@ -107,11 +110,13 @@ namespace Entidades
         }
         public static void EscribirXMLId(string path, int id)
         {
-            using (StreamWriter sw = new StreamWriter(path))
+            /*using (StreamWriter sw = new StreamWriter(path))
             {
                 XmlSerializer ser = new XmlSerializer(typeof(int));
                 ser.Serialize(sw, id);
-            }
+            }*/
+            string textoAGuardar = JsonConvert.SerializeObject(id,Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(path, textoAGuardar);
         }
         #endregion
 

@@ -2,146 +2,26 @@
 <ArrayOfVolquete xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Volquete>
     <Tipo>construccion</Tipo>
-    <Descripcion>sad</Descripcion>
-    <Precio>123</Precio>
-    <Capacidad>213</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>12</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>residuos</Tipo>
-    <Descripcion>a</Descripcion>
-    <Precio>123</Precio>
-    <Capacidad>213</Capacidad>
-    <IdUsuarioReserva>2</IdUsuarioReserva>
-    <Id>13</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>asdsa</Descripcion>
-    <Precio>3242</Precio>
-    <Capacidad>32432</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>14</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>anashe</Descripcion>
-    <Precio>123</Precio>
-    <Capacidad>21321</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>15</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>asd</Descripcion>
-    <Precio>21</Precio>
-    <Capacidad>213</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>16</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>asd</Descripcion>
-    <Precio>12</Precio>
-    <Capacidad>21</Capacidad>
-    <IdUsuarioReserva>3</IdUsuarioReserva>
-    <Id>17</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>sad</Descripcion>
-    <Precio>21</Precio>
-    <Capacidad>12</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>18</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>asd</Descripcion>
-    <Precio>2</Precio>
-    <Capacidad>123</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>19</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>d</Descripcion>
-    <Precio>123</Precio>
-    <Capacidad>123</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>20</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion />
-    <Precio>12</Precio>
-    <Capacidad>12</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>21</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>as</Descripcion>
-    <Precio>1</Precio>
-    <Capacidad>1</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>22</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>a</Descripcion>
-    <Precio>12</Precio>
-    <Capacidad>12</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>23</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>residuos</Tipo>
-    <Descripcion>pkla</Descripcion>
-    <Precio>12</Precio>
-    <Capacidad>12</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>25</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>residuos</Tipo>
-    <Descripcion>c</Descripcion>
-    <Precio>12</Precio>
-    <Capacidad>213</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>26</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>v</Descripcion>
+    <Descripcion>primero</Descripcion>
     <Precio>213</Precio>
-    <Capacidad>213</Capacidad>
+    <Capacidad>12312</Capacidad>
     <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>27</Id>
+    <Id>2</Id>
   </Volquete>
   <Volquete>
     <Tipo>construccion</Tipo>
-    <Descripcion>a</Descripcion>
-    <Precio>2</Precio>
-    <Capacidad>2</Capacidad>
+    <Descripcion>segundo</Descripcion>
+    <Precio>342</Precio>
+    <Capacidad>423</Capacidad>
     <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>28</Id>
+    <Id>3</Id>
   </Volquete>
   <Volquete>
     <Tipo>residuos</Tipo>
-    <Descripcion>esto anda¿</Descripcion>
-    <Precio>100</Precio>
-    <Capacidad>100</Capacidad>
+    <Descripcion>primero residuo</Descripcion>
+    <Precio>123</Precio>
+    <Capacidad>123123</Capacidad>
     <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>29</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>esto anda x2</Descripcion>
-    <Precio>150</Precio>
-    <Capacidad>1</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>30</Id>
+    <Id>4</Id>
   </Volquete>
 </ArrayOfVolquete>

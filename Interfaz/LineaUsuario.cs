@@ -22,12 +22,11 @@ namespace Interfaz
             this.usuario = usuario;
             this.usuarioLogueado = usuarioLogeado;
             this.padreForm = formPadre;
-            Console.WriteLine("actual usuario id" + usuarioLogueado.Id);
 
             lblUsuario.Text = usuario.Username;
             lblContraseña.Text = usuario.Contraseña;
             lblMail.Text = usuario.Mail;
-            lblRol.Text = usuario.Rol.ToString();
+            lblRol.Text = usuario.DevolverRolString();   
         }
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)

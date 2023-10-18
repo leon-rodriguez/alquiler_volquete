@@ -8,7 +8,7 @@ namespace Entidades
     [XmlInclude(typeof(UsuarioComun))]
     [XmlInclude(typeof(Administrador))]
     [XmlInclude(typeof(SuperUsuario))]
-    public class Usuario
+    public abstract class Usuario
     {
         private int id;
         private string username;
@@ -111,6 +111,8 @@ namespace Entidades
         {
             this.id = GenerarId();
         }
+
+        public abstract string DevolverRolString();
 
         public override string ToString()
         {

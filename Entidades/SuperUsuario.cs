@@ -62,11 +62,42 @@ namespace Entidades
             Roles rolAAsignar = (Roles)Enum.ToObject(typeof(Roles), rolActualNumero);
 
             List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(RutasArchivos.usuariosDB);
+            int index = 0;
+            bool encontrado = false;
+            Usuario usuarioEncontrado = null;
             foreach (Usuario usuario in listaUsuarios)
             {
                 if (usuario.Id == usuarioId)
                 {
-                    usuario.Rol = rolAAsignar;
+                    usuarioEncontrado = usuario;
+                    encontrado = true;
+                    break;
+                }
+                index++;
+            }
+            if (encontrado)
+            {
+                Console.WriteLine(rolAAsignar);
+                if (rolAAsignar == Roles.superUsuario)
+                {
+                    SuperUsuario superUsuarioEncontrado = new SuperUsuario(usuarioEncontrado.Username, usuarioEncontrado.Contraseña, usuarioEncontrado.Mail, rolAAsignar);
+                    superUsuarioEncontrado.Id = usuarioEncontrado.Id;
+                    listaUsuarios.RemoveAt(index);
+                    listaUsuarios.Add(superUsuarioEncontrado);
+                }
+                else if(rolAAsignar == Roles.administrador)
+                {
+                    Administrador administrador = new Administrador(usuarioEncontrado.Username, usuarioEncontrado.Contraseña, usuarioEncontrado.Mail, rolAAsignar);
+                    administrador.Id = usuarioEncontrado.Id;
+                    listaUsuarios.RemoveAt(index);
+                    listaUsuarios.Add(administrador);
+                }
+                else if (rolAAsignar == Roles.usuario)
+                {
+                    UsuarioComun usuarioComun = new UsuarioComun(usuarioEncontrado.Username, usuarioEncontrado.Contraseña, usuarioEncontrado.Mail, rolAAsignar);
+                    usuarioComun.Id = usuarioEncontrado.Id;
+                    listaUsuarios.RemoveAt(index);
+                    listaUsuarios.Insert(index, usuarioComun);
                 }
             }
             Serializadora.EscribirXMLUsuarios(RutasArchivos.usuariosDB, listaUsuarios);
@@ -90,6 +121,11 @@ namespace Entidades
             listaVolquetes.Add(volquete);
             Serializadora.EscribirXMLVolquetes(RutasArchivos.volqueteDB, listaVolquetes);
             return respuesta;
+        }
+
+        public override string DevolverRolString()
+        {
+            return "Super usuario";
         }
     }
 }

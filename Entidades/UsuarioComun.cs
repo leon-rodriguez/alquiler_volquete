@@ -15,5 +15,9 @@ namespace Entidades
         {
         }
 
+        public override string DevolverRolString()
+        {
+            return "Usuario común";
+        }
     }
 }

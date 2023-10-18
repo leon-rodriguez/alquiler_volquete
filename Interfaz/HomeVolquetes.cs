@@ -108,6 +108,11 @@ namespace Interfaz
 
             foreach (Usuario usuario in listaUsuarios)
             {
+                //SuperUsuario superUsuario = (SuperUsuario)usuario;
+                /*if (usuario.Rol == Roles.superUsuario)
+                {
+                    
+                }*/
                 LineaUsuario lineaUsuario = new LineaUsuario(usuario, usuarioActual, this);
                 lineaUsuario.MdiParent = this;
                 lineaUsuario.Show();

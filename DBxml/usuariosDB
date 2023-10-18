@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUsuario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Usuario xsi:type="UsuarioComun">
+  <Usuario xsi:type="SuperUsuario">
     <Username>a</Username>
     <Contraseña>a</Contraseña>
     <Mail>a@gmail.com</Mail>
     <Rol>superUsuario</Rol>
-    <Id>9</Id>
+    <Id>2</Id>
   </Usuario>
 </ArrayOfUsuario>

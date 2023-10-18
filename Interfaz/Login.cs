@@ -1,5 +1,7 @@
 using Entidades;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Interfaz
@@ -15,12 +17,18 @@ namespace Interfaz
         /*private void crearSuperUsuario()
         {
             List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(@"..\..\..\..\DBxml\usuariosDB");
-            foreach (Usuario item in listaUsuarios)
+            int index = 0;
+            foreach (Usuario usuarioEncontrado in listaUsuarios)
             {
-                if (item.Username == "a")
+                if (usuarioEncontrado.Username == "a")
                 {
-                    item.Rol = Roles.superUsuario;
+                    SuperUsuario superUsuario = new SuperUsuario(usuarioEncontrado.Username, usuarioEncontrado.Contraseña, usuarioEncontrado.Mail, Roles.superUsuario);
+                    superUsuario.Id = usuarioEncontrado.Id;
+                    listaUsuarios.RemoveAt(index);
+                    listaUsuarios.Insert(index, superUsuario);
+                    break;
                 }
+                index++;    
             }
             Serializadora.EscribirXMLUsuarios(@"..\..\..\..\DBxml\usuariosDB", listaUsuarios);
         }*/
@@ -36,7 +44,7 @@ namespace Interfaz
         {
             string userName = txtUser.Text;
             string contraseña = txtContraseña.Text;
-            Usuario usuarioProvicional = new Usuario(userName, contraseña, "", Roles.usuario);
+            Usuario usuarioProvicional = new UsuarioComun(userName, contraseña, "", Roles.usuario);
 
             if (usuarioProvicional.IniciarSesion())
             {
@@ -58,7 +66,8 @@ namespace Interfaz
                 }
                 else
                 {
-                    Administrador usuarioComun = new Administrador(userName, contraseña, "", Roles.usuario);
+                    UsuarioComun usuarioComun = new UsuarioComun(userName, contraseña, "", Roles.usuario);
+                    usuarioComun.IniciarSesion();
                     HomeVolquetes homeVolquetes = new HomeVolquetes(usuarioComun);
                     homeVolquetes.Show();
                     this.Hide();
