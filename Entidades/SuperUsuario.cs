@@ -62,6 +62,8 @@ namespace Entidades
             Roles rolAAsignar = (Roles)Enum.ToObject(typeof(Roles), rolActualNumero);
 
             List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(RutasArchivos.usuariosDB);
+
+            //se encarga de ademas de cambiar el rol cambiar el tipo de la instancia de usuario
             int index = 0;
             bool encontrado = false;
             Usuario usuarioEncontrado = null;
@@ -104,6 +106,7 @@ namespace Entidades
             return true;
         }
 
+        //agrega el volquete pasado por parametro
         public bool AgregarVolquete(Volquete volquete)
         {
             string ruta;

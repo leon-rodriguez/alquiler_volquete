@@ -15,21 +15,25 @@ namespace Interfaz
     {
         private HomeVolquetes formPadre;
         private Form formActivo;
-        public PrimeraPantallaVolquetes(HomeVolquetes formPadre, Form formActivo)
+        private Usuario usuario;
+        private Panel panel;
+        public PrimeraPantallaVolquetes(HomeVolquetes formPadre, Form formActivo, Usuario usuario, Panel panel)
         {
             InitializeComponent();
             this.formPadre = formPadre;
             this.formActivo = formActivo;
+            this.usuario = usuario;
+            this.panel = panel;
         }
 
         private void btnVerConstruccion_Click(object sender, EventArgs e)
         {
-            formPadre.rellenarListBox(TiposVolquete.construccion, false);
+            AccionesForm.rellenarListBox(TiposVolquete.construccion, false, formActivo, formPadre, usuario, panel);
         }
 
         private void btnVerResiduos_Click(object sender, EventArgs e)
         {
-            formPadre.rellenarListBox(TiposVolquete.residuos, false);
+            AccionesForm.rellenarListBox(TiposVolquete.residuos, false, formActivo, formPadre, usuario, panel);
         }
     }
 }

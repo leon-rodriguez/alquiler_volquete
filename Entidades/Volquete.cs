@@ -28,7 +28,7 @@ namespace Entidades
 
         public Volquete()
         {
-            
+
         }
 
         public Volquete(TiposVolquete tipo, string descripcion, int precio, int capacidad)
@@ -39,6 +39,8 @@ namespace Entidades
             this.capacidad = capacidad;
             this.idUsuarioReserva = 0;
         }
+
+        //setea el comparador == para que compare los id de lso volquetes
         public static bool operator ==(Volquete volquete1, Volquete volquete2)
         {
             return volquete1.Id == volquete2.Id;
@@ -48,6 +50,7 @@ namespace Entidades
             return !(volquete1.Id == volquete2.Id);
         }
 
+        // se intenta parsear el numero ingreado, en caso de falla devuelve -1
         private int ValidarNumeroIngresado(string numeroIngresado)
         {
             int respuesta = 1;
@@ -62,6 +65,7 @@ namespace Entidades
             return respuesta;
         }
 
+        // se asignan los valores en caso de ser todo valid0
         public bool ValidarVolquete(string precioIngresado, string capacidadIngresada, TiposVolquete tipo, string descripcion)
         {
             int precioParseado = ValidarNumeroIngresado(precioIngresado);
@@ -82,6 +86,7 @@ namespace Entidades
             }
         }
 
+        //genera y asigna id
         private int GenerarId()
         {
             int actualId = Serializadora.LeerXMLId(RutasArchivos.idVolqueteDB);
@@ -91,6 +96,8 @@ namespace Entidades
             return idAsignable;
         }
 
+
+        //le asigna el id del usuario que lo reservo
         public void ReservarVolquete(int usuarioId)
         {
             if (usuarioId > 0) 
@@ -111,6 +118,7 @@ namespace Entidades
             
         }
 
+        //le vuelve a asignar el id a 0 dando por finalizado el alquiler
         public void CancelarReserva(int usuarioId)
         {
             if (usuarioId > 0)

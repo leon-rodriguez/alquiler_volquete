@@ -12,7 +12,8 @@ namespace Entidades
     [XmlInclude(typeof(Usuario))]
     [XmlInclude(typeof(Volquete))]
 
-    public class Serializadora{
+    public class Serializadora
+    {
 
         #region Dbusuarios      
         public static void EscribirXMLUsuarios(string path, List<Usuario> usuario)
@@ -26,12 +27,9 @@ namespace Entidades
 
         public static bool AgregarUsuario(Usuario usuario)
         {
-            string ruta;
-            string path;
             List<Usuario> listaUsuarios;
             bool respuesta = true;
 
-            //path = @"..\..\..\..\DBxml\usuariosDB";
             Serializadora.ExisteArchivoUsuario(RutasArchivos.usuariosDB);
 
 
@@ -87,12 +85,6 @@ namespace Entidades
             int idActual;
             Serializadora.ExisteArchivoId(path);
 
-            /*using (StreamReader sr = new StreamReader(path))
-            {
-                XmlSerializer des = new XmlSerializer(typeof(int));
-
-                idActual = (int)des.Deserialize(sr);
-            }*/
             string json = File.ReadAllText(path);
             idActual = JsonConvert.DeserializeObject<int>(json);
 
@@ -110,11 +102,6 @@ namespace Entidades
         }
         public static void EscribirXMLId(string path, int id)
         {
-            /*using (StreamWriter sw = new StreamWriter(path))
-            {
-                XmlSerializer ser = new XmlSerializer(typeof(int));
-                ser.Serialize(sw, id);
-            }*/
             string textoAGuardar = JsonConvert.SerializeObject(id,Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(path, textoAGuardar);
         }

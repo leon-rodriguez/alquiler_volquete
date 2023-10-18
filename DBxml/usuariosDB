@@ -7,18 +7,11 @@
     <Rol>superUsuario</Rol>
     <Id>2</Id>
   </Usuario>
-  <Usuario xsi:type="UsuarioComun">
-    <Username>leon</Username>
-    <Contraseña>a</Contraseña>
-    <Mail>leon@gmail.com</Mail>
-    <Rol>usuario</Rol>
-    <Id>4</Id>
-  </Usuario>
-  <Usuario xsi:type="UsuarioComun">
+  <Usuario xsi:type="Administrador">
     <Username>leonidas</Username>
     <Contraseña>a</Contraseña>
     <Mail>leonidas@gmail.com</Mail>
-    <Rol>usuario</Rol>
+    <Rol>administrador</Rol>
     <Id>5</Id>
   </Usuario>
 </ArrayOfUsuario>

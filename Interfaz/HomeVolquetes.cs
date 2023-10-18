@@ -20,172 +20,11 @@ namespace Interfaz
         {
             InitializeComponent();
             this.usuarioActual = usuario;
-            abrirFormulario(new PrimeraPantallaVolquetes(this, formActivo));
+            abrirFormulario(new PrimeraPantallaVolquetes(this, formActivo, usuarioActual, panelMenuLateral));
             aplicarVisibilidades();
         }
 
-        public bool rellenarListBox(TiposVolquete tipoElegido, bool esParaAdministrar)
-        {
-            if (formActivo != null)
-            {
-                formActivo.Close();
-            }
-
-            foreach (Form item in this.MdiChildren)
-            {
-                if (item is VolqueteCard || item is LineaUsuario)
-                {
-                    item.Dispose();
-                }
-            }
-            bool hayVolquetesDeMismoTipo = false;
-
-            List<Volquete> listaVolquetes = Serializadora.LeerXMLVolquete(RutasArchivos.volqueteDB);
-            if (listaVolquetes.Count == 0)
-            {
-                mostrarMensajeNoDisponible("No hay volquetes disponibles\nEspere a que se reponga el stock\nMuchas Gracias.");
-                return hayVolquetesDeMismoTipo;
-            }
-            int y = 10;
-            int x = 10;
-            bool flag = true;
-            foreach (Volquete volquete in listaVolquetes)
-            {
-                if (volquete.Tipo == tipoElegido)
-                {
-                    hayVolquetesDeMismoTipo = true;
-                    VolqueteCard volqueteCard = new VolqueteCard(volquete, this, usuarioActual.Id, esParaAdministrar);
-                    volqueteCard.MdiParent = this;
-                    volqueteCard.Show();
-                    if (x + (volqueteCard.Size.Width) * 2 > this.Size.Width - panelMenuLateral.Size.Width)
-                    {
-                        y += volqueteCard.Size.Height + 20;
-                        x = 10;
-                    }
-                    else
-                    {
-                        if (!flag)
-                        {
-                            x += volqueteCard.Size.Width + 10;
-                        }
-                        flag = false;
-                    }
-                    volqueteCard.Location = new System.Drawing.Point(x, y);
-                }
-
-            }
-            if (!hayVolquetesDeMismoTipo)
-            {
-                mostrarMensajeNoDisponible("No hay volquetes disponibles\nEspere a que se reponga el stock\nMuchas Gracias.");
-            }
-            return hayVolquetesDeMismoTipo;
-        }
-
-        public bool listarUsuarios()
-        {
-            if (formActivo != null)
-            {
-                formActivo.Close();
-            }
-
-            foreach (Form item in this.MdiChildren)
-            {
-                if (item is LineaUsuario || item is VolqueteCard)
-                {
-                    item.Dispose();
-                }
-            }
-
-            List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(RutasArchivos.usuariosDB);
-            if (listaUsuarios.Count == 0)
-            {
-                mostrarMensajeNoDisponible("No existen usuarios :C");
-                return false;
-            }
-            int y = 0;
-            int x = 0;
-            int indicadorAlternante = 0;
-
-            foreach (Usuario usuario in listaUsuarios)
-            {
-                //SuperUsuario superUsuario = (SuperUsuario)usuario;
-                /*if (usuario.Rol == Roles.superUsuario)
-                {
-                    
-                }*/
-                LineaUsuario lineaUsuario = new LineaUsuario(usuario, usuarioActual, this);
-                lineaUsuario.MdiParent = this;
-                lineaUsuario.Show();
-                lineaUsuario.Location = new System.Drawing.Point(x, y);
-                lineaUsuario.Width = this.Size.Width - panelMenuLateral.Size.Width - 20;
-
-                lineaUsuario.BackColor = Color.FromArgb(235, 235, 235);
-                if (indicadorAlternante % 2 == 0)
-                {
-                    lineaUsuario.BackColor = Color.White;
-                }
-
-                y += lineaUsuario.Size.Height;
-                indicadorAlternante++;
-            }
-            return true;
-        }
-        public bool rellenarListBoxAdministrar(bool esParaAdministrar)
-        {
-            if (formActivo != null)
-            {
-                formActivo.Close();
-            }
-
-            foreach (Form item in this.MdiChildren)
-            {
-                if (item is VolqueteCard || item is LineaUsuario)
-                {
-                    item.Dispose();
-                }
-            }
-
-            List<Volquete> listaVolquetes = Serializadora.LeerXMLVolquete(RutasArchivos.volqueteDB);
-            if (listaVolquetes.Count == 0)
-            {
-                mostrarMensajeNoDisponible("No tienes reservas");
-                return false;
-            }
-            int y = 10;
-            int x = 10;
-            bool flag = true;
-            bool hayVolquetesReservados = false;
-            foreach (Volquete volquete in listaVolquetes)
-            {
-                if (volquete.IdUsuarioReserva == usuarioActual.Id)
-                {
-                    hayVolquetesReservados = true;
-                    VolqueteCard volqueteCard = new VolqueteCard(volquete, this, usuarioActual.Id, esParaAdministrar);
-                    volqueteCard.MdiParent = this;
-                    volqueteCard.Show();
-                    if (x + (volqueteCard.Size.Width) * 2 > this.Size.Width - panelMenuLateral.Size.Width)
-                    {
-                        y += volqueteCard.Size.Height + 20;
-                        x = 10;
-                    }
-                    else
-                    {
-                        if (!flag)
-                        {
-                            x += volqueteCard.Size.Width + 10;
-                        }
-                        flag = false;
-                    }
-                    volqueteCard.Location = new System.Drawing.Point(x, y);
-                }
-
-            }
-            if (!hayVolquetesReservados)
-            {
-                mostrarMensajeNoDisponible("No tienes reservas");
-            }
-            return hayVolquetesReservados;
-        }
+        #region AplicarEstilos
         private void ocultarSubmenu()
         {
             if (panelVolquetesSubmenu.Visible == true)
@@ -209,15 +48,6 @@ namespace Interfaz
             {
                 subMenu.Visible = false;
             }
-        }
-        private void btnVolquetes_Click(object sender, EventArgs e)
-        {
-            mostrarSubMenu(panelVolquetesSubmenu);
-        }
-
-        private void btnCuenta_Click(object sender, EventArgs e)
-        {
-            mostrarSubMenu(panelCuentaSubmenu);
         }
 
         public void abrirFormulario(Form formAbrir)
@@ -256,19 +86,21 @@ namespace Interfaz
                 panelCuentaSubmenu.Height -= btnAlquileresUsuario.Height;
             }
         }
+        #endregion
 
-        private void mostrarMensajeNoDisponible(string mensajeAMostrar)
+        #region AccionesBotones
+        private void btnVolquetes_Click(object sender, EventArgs e)
         {
-            MensajeNoDisponible mensaje = new MensajeNoDisponible(mensajeAMostrar);
-            abrirFormulario(mensaje);
-            int mitadAncho = ((this.Size.Width - panelMenuLateral.Size.Width) / 2) - (mensaje.Size.Width / 2);
-            int mitadAlto = ((this.Size.Height) / 2) - (mensaje.Size.Height / 2);
-            mensaje.Location = new Point(mitadAncho, mitadAlto);
+            mostrarSubMenu(panelVolquetesSubmenu);
         }
 
+        private void btnCuenta_Click(object sender, EventArgs e)
+        {
+            mostrarSubMenu(panelCuentaSubmenu);
+        }
         private void btnAdministrarUsuarios_Click(object sender, EventArgs e)
         {
-            listarUsuarios();
+            AccionesForm.listarUsuarios(formActivo, this, usuarioActual, panelMenuLateral);
         }
 
         private void btnAñadirVolquete_Click(object sender, EventArgs e)
@@ -279,17 +111,17 @@ namespace Interfaz
 
         private void btnVerConstruccion_Click(object sender, EventArgs e)
         {
-            rellenarListBox(TiposVolquete.construccion, false);
+            AccionesForm.rellenarListBox(TiposVolquete.construccion, false, formActivo, this, usuarioActual, panelMenuLateral);
         }
 
         private void btnVerVolquetesResiduos_Click(object sender, EventArgs e)
         {
-            rellenarListBox(TiposVolquete.residuos, false);
+            AccionesForm.rellenarListBox(TiposVolquete.residuos, false, formActivo, this, usuarioActual, panelMenuLateral);
         }
 
         private void btnAlquileresUsuario_Click(object sender, EventArgs e)
         {
-            rellenarListBoxAdministrar(true);
+            AccionesForm.rellenarListBoxAdministrar(true, formActivo, this, usuarioActual, panelMenuLateral);
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -298,5 +130,6 @@ namespace Interfaz
             login.Show();
             this.Close();
         }
+        #endregion 
     }
 }

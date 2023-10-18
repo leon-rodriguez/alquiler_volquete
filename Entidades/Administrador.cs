@@ -15,6 +15,7 @@ namespace Entidades
         {
         }
 
+        //agrega el volquete pasado por parametro a la db
         public bool AgregarVolquete(Volquete volquete)
         {
             List<Volquete> listaVolquetes;

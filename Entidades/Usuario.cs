@@ -40,6 +40,7 @@ namespace Entidades
         public Roles Rol { get => rol; set => rol = value; }
         public int Id { get => id; set => id = value; }
 
+        //comprueba si el usuario y contraseña coincide en la db
         public bool IniciarSesion()
         {
             bool resultado = false;
@@ -98,6 +99,7 @@ namespace Entidades
             return respuesta;
         }
 
+        //genera un id unico para el usuario
         private int GenerarId()
         { 
             int actualId = Serializadora.LeerXMLId(RutasArchivos.idUsuarioDB);
@@ -107,6 +109,7 @@ namespace Entidades
             return idAsignable;
         }
 
+        //asigna el id
         public void AsignarId()
         {
             this.id = GenerarId();

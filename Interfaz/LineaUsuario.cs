@@ -16,12 +16,16 @@ namespace Interfaz
         private Usuario usuario;
         private Usuario usuarioLogueado;
         private HomeVolquetes padreForm;
-        public LineaUsuario(Usuario usuario, Usuario usuarioLogeado, HomeVolquetes formPadre)
+        private Form formActivo;
+        private Panel panel;
+        public LineaUsuario(Usuario usuario, Usuario usuarioLogeado, HomeVolquetes formPadre, Form formActivo, Panel panel)
         {
             InitializeComponent();
             this.usuario = usuario;
             this.usuarioLogueado = usuarioLogeado;
             this.padreForm = formPadre;
+            this.panel = panel;
+            this.formActivo = formActivo;
 
             lblUsuario.Text = usuario.Username;
             lblContraseña.Text = usuario.Contraseña;
@@ -38,7 +42,7 @@ namespace Interfaz
                 {
                     MessageBox.Show("No puedes eliminarte a vos mismo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                padreForm.listarUsuarios();
+                AccionesForm.listarUsuarios(formActivo, padreForm, usuarioLogueado, panel);
             }
         }
 
@@ -51,7 +55,7 @@ namespace Interfaz
                 {
                     MessageBox.Show("No puedes cambiarte el rol a vos mismo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                padreForm.listarUsuarios();
+                AccionesForm.listarUsuarios(formActivo, padreForm, usuarioLogueado, panel);
             }
         }
     }

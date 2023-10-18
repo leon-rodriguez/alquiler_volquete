@@ -17,7 +17,11 @@ namespace Interfaz
         private Volquete volquete;
         private int usuarioId;
         private bool esParaAdministrar;
-        public VolqueteCard(Volquete volquete, HomeVolquetes formPadre, int usuarioId, bool esParaAdministrar)
+        private Usuario usuario;
+        private Form formActivo;
+        private Panel panel;
+
+        public VolqueteCard(Volquete volquete, HomeVolquetes formPadre, int usuarioId, bool esParaAdministrar, Usuario usuario, Form formActivo, Panel panel)
         {
             InitializeComponent();
             lblTipo.Text = volquete.Tipo.ToString();
@@ -28,6 +32,9 @@ namespace Interfaz
             this.volquete = volquete;
             this.usuarioId = usuarioId;
             this.esParaAdministrar = esParaAdministrar;
+            this.usuario = usuario;
+            this.formActivo = formActivo;
+            this.panel = panel;
             generarDiseños();
         }
 
@@ -53,12 +60,12 @@ namespace Interfaz
             if (volquete.IdUsuarioReserva == 0 && !esParaAdministrar)
             {
                 volquete.ReservarVolquete(usuarioId);
-                padreForm.rellenarListBox(volquete.Tipo, false);
+                AccionesForm.rellenarListBox(volquete.Tipo, false, formActivo, padreForm, usuario, panel);
             }
             if (esParaAdministrar)
             {
                 volquete.CancelarReserva(usuarioId);
-                padreForm.rellenarListBoxAdministrar(true);
+                AccionesForm.rellenarListBoxAdministrar(true, formActivo, padreForm, usuario, panel);
             }
         }
 
