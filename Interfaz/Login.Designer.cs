@@ -35,6 +35,7 @@
             btnIniciarSesion = new Button();
             label3 = new Label();
             btnRegistrarse = new LinkLabel();
+            btnAutoCompletar = new Button();
             SuspendLayout();
             // 
             // label1
@@ -126,12 +127,31 @@
             btnRegistrarse.Text = "Registrate aqui";
             btnRegistrarse.LinkClicked += btnRegistrarse_LinkClicked;
             // 
+            // btnAutoCompletar
+            // 
+            btnAutoCompletar.Anchor = AnchorStyles.None;
+            btnAutoCompletar.BackColor = Color.White;
+            btnAutoCompletar.Cursor = Cursors.Hand;
+            btnAutoCompletar.FlatAppearance.BorderColor = Color.White;
+            btnAutoCompletar.FlatAppearance.BorderSize = 2;
+            btnAutoCompletar.FlatStyle = FlatStyle.Flat;
+            btnAutoCompletar.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAutoCompletar.ForeColor = Color.FromArgb(128, 128, 255);
+            btnAutoCompletar.Location = new Point(553, 170);
+            btnAutoCompletar.Name = "btnAutoCompletar";
+            btnAutoCompletar.Size = new Size(135, 40);
+            btnAutoCompletar.TabIndex = 7;
+            btnAutoCompletar.Text = "Autocompletar";
+            btnAutoCompletar.UseVisualStyleBackColor = false;
+            btnAutoCompletar.Click += btnAutoCompletar_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(128, 128, 255);
             ClientSize = new Size(745, 648);
+            Controls.Add(btnAutoCompletar);
             Controls.Add(btnRegistrarse);
             Controls.Add(label3);
             Controls.Add(btnIniciarSesion);
@@ -139,6 +159,7 @@
             Controls.Add(label2);
             Controls.Add(txtUser);
             Controls.Add(label1);
+            Cursor = Cursors.Arrow;
             Name = "Login";
             Text = "Form1";
             ResumeLayout(false);
@@ -154,5 +175,6 @@
         private Button btnIniciarSesion;
         private Label label3;
         private LinkLabel btnRegistrarse;
+        private Button btnAutoCompletar;
     }
 }

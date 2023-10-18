@@ -78,5 +78,38 @@ namespace Interfaz
                 MessageBox.Show("No hay ninguna cuenta que coincida con estos datos, reviselos cuidadosamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnAutoCompletar_Click(object sender, EventArgs e)
+        {
+            txtUser.Text = autocmpletar();
+        }
+
+        private string autocmpletar()
+        {
+            string txtInputUser = txtUser.Text;
+            string respuesta = "";
+            if (txtInputUser.Length == 0)
+            {
+                return respuesta;
+            }
+            List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(@"..\..\..\..\DBxml\usuariosDB");
+            bool huboCoincidencia = false;
+            foreach (Usuario usuario in listaUsuarios)
+            {
+                if (usuario.Username.StartsWith(txtInputUser))
+                {
+                    respuesta = usuario.Username;
+                    huboCoincidencia = true;
+                    break;
+                }
+            }
+
+            if (!huboCoincidencia) 
+            {
+                respuesta = txtInputUser;
+            }
+            return respuesta;
+
+        }
     }
 }
