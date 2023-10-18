@@ -2,34 +2,10 @@
 <ArrayOfVolquete xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Volquete>
     <Tipo>construccion</Tipo>
-    <Descripcion>primero</Descripcion>
-    <Precio>213</Precio>
-    <Capacidad>12312</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>2</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>segundo</Descripcion>
-    <Precio>342</Precio>
-    <Capacidad>423</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>3</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>residuos</Tipo>
-    <Descripcion>primero residuo</Descripcion>
+    <Descripcion>asda</Descripcion>
     <Precio>123</Precio>
-    <Capacidad>123123</Capacidad>
+    <Capacidad>213</Capacidad>
     <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>4</Id>
-  </Volquete>
-  <Volquete>
-    <Tipo>construccion</Tipo>
-    <Descripcion>sd</Descripcion>
-    <Precio>312</Precio>
-    <Capacidad>123</Capacidad>
-    <IdUsuarioReserva>0</IdUsuarioReserva>
-    <Id>5</Id>
+    <Id>6</Id>
   </Volquete>
 </ArrayOfVolquete>

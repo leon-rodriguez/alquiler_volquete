@@ -13,7 +13,7 @@ namespace Interfaz
         {
             foreach (Form item in formPadre.MdiChildren)
             {
-                if (item is VolqueteCard || item is LineaUsuario || item is MensajeNoDisponible)
+                if (item is VolqueteCard || item is LineaUsuario || item is MensajeNoDisponible || item is PrimeraPantallaVolquetes)
                 {
                     item.Dispose();
                 }
@@ -100,7 +100,7 @@ namespace Interfaz
         }
 
         //rellena los volquetes en tus alquieleres
-        public static bool rellenarListBoxAdministrar(bool esParaAdministrar,Form formActivo, HomeVolquetes formPadre, Usuario usuarioActual, Panel panelMenuLateral)
+        public static bool rellenarListBoxAdministrar(bool esParaAdministrar, Form formActivo, HomeVolquetes formPadre, Usuario usuarioActual, Panel panelMenuLateral)
         {
             if (formActivo != null)
             {
@@ -165,7 +165,7 @@ namespace Interfaz
             List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(RutasArchivos.usuariosDB);
             if (listaUsuarios.Count == 0)
             {
-                mostrarMensajeNoDisponible("No existen usuarios :C" ,formPadre, formActivo, panelMenuLateral);
+                mostrarMensajeNoDisponible("No existen usuarios :C", formPadre, formActivo, panelMenuLateral);
                 return false;
             }
             int y = 0;
