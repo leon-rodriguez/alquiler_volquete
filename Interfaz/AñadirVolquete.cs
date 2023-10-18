@@ -21,6 +21,7 @@ namespace Interfaz
             this.usuario = usuario;
         }
 
+        //valida los datos guarda el volquete y resetea los campos
         private void btnAñadirVolquete_Click(object sender, EventArgs e)
         {
             TiposVolquete tipo = TiposVolquete.construccion;

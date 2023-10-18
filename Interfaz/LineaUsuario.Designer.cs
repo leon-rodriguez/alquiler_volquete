@@ -67,7 +67,6 @@
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(197, 56);
             lblUsuario.TabIndex = 1;
-            lblUsuario.Text = "Usuario";
             lblUsuario.TextAlign = ContentAlignment.TopCenter;
             // 
             // label1
@@ -101,7 +100,6 @@
             lblContraseña.Name = "lblContraseña";
             lblContraseña.Size = new Size(197, 56);
             lblContraseña.TabIndex = 1;
-            lblContraseña.Text = "Usuario";
             lblContraseña.TextAlign = ContentAlignment.TopCenter;
             // 
             // label4
@@ -135,7 +133,6 @@
             lblMail.Name = "lblMail";
             lblMail.Size = new Size(197, 56);
             lblMail.TabIndex = 1;
-            lblMail.Text = "Usuario";
             lblMail.TextAlign = ContentAlignment.TopCenter;
             // 
             // label6
@@ -187,7 +184,6 @@
             lblRol.Name = "lblRol";
             lblRol.Size = new Size(197, 22);
             lblRol.TabIndex = 1;
-            lblRol.Text = "Usuario";
             lblRol.TextAlign = ContentAlignment.TopCenter;
             // 
             // label8

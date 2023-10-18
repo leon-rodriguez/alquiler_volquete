@@ -30,9 +30,10 @@ namespace Interfaz
             lblUsuario.Text = usuario.Username;
             lblContraseña.Text = usuario.Contraseña;
             lblMail.Text = usuario.Mail;
-            lblRol.Text = usuario.DevolverRolString();   
+            lblRol.Text = usuario.DevolverRolString();
         }
 
+        //elimina el usuario y recarga la pantalla
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
             if (usuarioLogueado is SuperUsuario superUsuario)
@@ -46,6 +47,7 @@ namespace Interfaz
             }
         }
 
+        //cambia el rol y recarga la pantalla
         private void btnCambiarRol_Click(object sender, EventArgs e)
         {
             if (usuarioLogueado is SuperUsuario superUsuario)

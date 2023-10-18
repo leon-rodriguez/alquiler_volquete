@@ -24,4 +24,12 @@
     <IdUsuarioReserva>0</IdUsuarioReserva>
     <Id>4</Id>
   </Volquete>
+  <Volquete>
+    <Tipo>construccion</Tipo>
+    <Descripcion>sd</Descripcion>
+    <Precio>312</Precio>
+    <Capacidad>123</Capacidad>
+    <IdUsuarioReserva>0</IdUsuarioReserva>
+    <Id>5</Id>
+  </Volquete>
 </ArrayOfVolquete>

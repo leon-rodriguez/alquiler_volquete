@@ -19,6 +19,7 @@ namespace Interfaz
             InitializeComponent();
         }
 
+        //si los datos son validos se crea por defecto un usuario comun y se agrega a la db
         private void btnRegistrarseRegistro_Click(object sender, EventArgs e)
         {
             string userName = txtUserRegistro.Text;
@@ -47,23 +48,6 @@ namespace Interfaz
             Login login = new Login();
             this.Hide();
             login.Show();
-        }
-
-        private void txtUserRegistro_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void txtContraseñaRegistro_TextChanged(object sender, EventArgs e)
-        {
         }
     }
 }

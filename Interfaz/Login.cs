@@ -14,6 +14,7 @@ namespace Interfaz
             //crearSuperUsuario();
         }
 
+        //hace superusuario a determinado usuario ya creado en la db
         /*private void crearSuperUsuario()
         {
             List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(@"..\..\..\..\DBxml\usuariosDB");
@@ -40,6 +41,7 @@ namespace Interfaz
             registro.Show();
         }
 
+        // si se valida usuario y contraseña se entra en la aplicacion
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             string userName = txtUser.Text;
@@ -81,10 +83,11 @@ namespace Interfaz
 
         private void btnAutoCompletar_Click(object sender, EventArgs e)
         {
-            txtUser.Text = autocmpletar();
+            txtUser.Text = autocompletar();
         }
 
-        private string autocmpletar()
+        //autocompleta con el primer nombre encontrado deñ usuario
+        private string autocompletar()
         {
             string txtInputUser = txtUser.Text;
             string respuesta = "";
@@ -104,7 +107,7 @@ namespace Interfaz
                 }
             }
 
-            if (!huboCoincidencia) 
+            if (!huboCoincidencia)
             {
                 respuesta = txtInputUser;
             }

@@ -54,6 +54,7 @@
             // 
             txtUser.Anchor = AnchorStyles.None;
             txtUser.BorderStyle = BorderStyle.None;
+            txtUser.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             txtUser.Location = new Point(217, 160);
             txtUser.Multiline = true;
             txtUser.Name = "txtUser";
@@ -66,6 +67,7 @@
             txtContraseña.Anchor = AnchorStyles.None;
             txtContraseña.BackColor = Color.White;
             txtContraseña.BorderStyle = BorderStyle.None;
+            txtContraseña.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             txtContraseña.Location = new Point(217, 344);
             txtContraseña.Multiline = true;
             txtContraseña.Name = "txtContraseña";
@@ -159,7 +161,6 @@
             Controls.Add(label2);
             Controls.Add(txtUser);
             Controls.Add(label1);
-            Cursor = Cursors.Arrow;
             Name = "Login";
             Text = "Form1";
             ResumeLayout(false);

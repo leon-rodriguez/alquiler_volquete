@@ -85,9 +85,8 @@
             lblPrecio.ForeColor = Color.FromArgb(64, 64, 64);
             lblPrecio.Location = new Point(180, 69);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(22, 25);
+            lblPrecio.Size = new Size(0, 25);
             lblPrecio.TabIndex = 18;
-            lblPrecio.Text = "a";
             // 
             // lblCapacidad
             // 
@@ -96,9 +95,8 @@
             lblCapacidad.ForeColor = Color.FromArgb(64, 64, 64);
             lblCapacidad.Location = new Point(180, 103);
             lblCapacidad.Name = "lblCapacidad";
-            lblCapacidad.Size = new Size(22, 25);
+            lblCapacidad.Size = new Size(0, 25);
             lblCapacidad.TabIndex = 17;
-            lblCapacidad.Text = "a";
             // 
             // label3
             // 
@@ -129,9 +127,8 @@
             lblTipo.ForeColor = Color.Black;
             lblTipo.Location = new Point(73, 22);
             lblTipo.Name = "lblTipo";
-            lblTipo.Size = new Size(20, 28);
+            lblTipo.Size = new Size(0, 28);
             lblTipo.TabIndex = 14;
-            lblTipo.Text = "t";
             // 
             // VolqueteCard
             // 

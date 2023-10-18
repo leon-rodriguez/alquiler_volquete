@@ -23,6 +23,7 @@ namespace Interfaz
         //rellena volquetes en el home
         public static bool rellenarListBox(TiposVolquete tipoElegido, bool esParaAdministrar, Form formActivo, HomeVolquetes formPadre, Usuario usuarioActual, Panel panelMenuLateral)
         {
+            Console.WriteLine("form activo" + formActivo);
             if (formActivo != null)
             {
                 formActivo.Hide();

@@ -47,10 +47,8 @@
             txtUserRegistro.Location = new Point(199, 119);
             txtUserRegistro.Multiline = true;
             txtUserRegistro.Name = "txtUserRegistro";
-            txtUserRegistro.PlaceholderText = "Usuario";
             txtUserRegistro.Size = new Size(315, 50);
             txtUserRegistro.TabIndex = 4;
-            txtUserRegistro.TextChanged += txtUserRegistro_TextChanged;
             // 
             // label1
             // 
@@ -63,7 +61,6 @@
             label1.Size = new Size(87, 21);
             label1.TabIndex = 3;
             label1.Text = "Username";
-            label1.Click += label1_Click;
             // 
             // txtContraseñaRegistro
             // 
@@ -75,7 +72,6 @@
             txtContraseñaRegistro.PasswordChar = '*';
             txtContraseñaRegistro.Size = new Size(315, 50);
             txtContraseñaRegistro.TabIndex = 6;
-            txtContraseñaRegistro.TextChanged += txtContraseñaRegistro_TextChanged;
             // 
             // txtMailRegistro
             // 
@@ -126,7 +122,6 @@
             label5.Size = new Size(96, 21);
             label5.TabIndex = 12;
             label5.Text = "Contraseña";
-            label5.Click += label5_Click;
             // 
             // label2
             // 
