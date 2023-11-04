@@ -7,13 +7,6 @@
     <Rol>superUsuario</Rol>
     <Id>2</Id>
   </Usuario>
-  <Usuario xsi:type="UsuarioComun">
-    <Username>leonidas</Username>
-    <Contraseña>a</Contraseña>
-    <Mail>leonidas@gmail.com</Mail>
-    <Rol>usuario</Rol>
-    <Id>5</Id>
-  </Usuario>
   <Usuario xsi:type="SuperUsuario">
     <Username>avril</Username>
     <Contraseña>a</Contraseña>
@@ -25,6 +18,13 @@
     <Username>mesi</Username>
     <Contraseña>m</Contraseña>
     <Mail>avion@gmail.com</Mail>
+    <Rol>usuario</Rol>
+    <Id>0</Id>
+  </Usuario>
+  <Usuario xsi:type="UsuarioComun">
+    <Username>leon</Username>
+    <Contraseña>leon</Contraseña>
+    <Mail>leon@gmail.com</Mail>
     <Rol>usuario</Rol>
     <Id>0</Id>
   </Usuario>
