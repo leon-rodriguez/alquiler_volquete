@@ -174,7 +174,6 @@
             btnCambiarRol.Text = "Cambiar";
             btnCambiarRol.TextAlign = ContentAlignment.TopCenter;
             btnCambiarRol.UseVisualStyleBackColor = false;
-            btnCambiarRol.Click += btnCambiarRol_Click;
             // 
             // lblRol
             // 
@@ -212,7 +211,6 @@
             btnEliminarUsuario.TabIndex = 4;
             btnEliminarUsuario.Text = "Eliminar";
             btnEliminarUsuario.UseVisualStyleBackColor = false;
-            btnEliminarUsuario.Click += btnEliminarUsuario_Click;
             // 
             // LineaUsuario
             // 

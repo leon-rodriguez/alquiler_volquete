@@ -94,7 +94,6 @@
             btnVerConstruccion.TabIndex = 0;
             btnVerConstruccion.Text = "Alquilar";
             btnVerConstruccion.UseVisualStyleBackColor = false;
-            btnVerConstruccion.Click += btnVerConstruccion_Click;
             // 
             // panel2
             // 
@@ -164,7 +163,6 @@
             btnVerResiduos.TabIndex = 0;
             btnVerResiduos.Text = "Alquilar";
             btnVerResiduos.UseVisualStyleBackColor = false;
-            btnVerResiduos.Click += btnVerResiduos_Click;
             // 
             // panel7
             // 

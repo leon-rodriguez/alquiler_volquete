@@ -98,7 +98,6 @@
             btnRegistrarseRegistro.TabIndex = 9;
             btnRegistrarseRegistro.Text = "Registrarse";
             btnRegistrarseRegistro.UseVisualStyleBackColor = true;
-            btnRegistrarseRegistro.Click += btnRegistrarseRegistro_Click;
             // 
             // txtConfirmarContraseña
             // 
@@ -160,7 +159,6 @@
             button1.TabIndex = 16;
             button1.Text = "<";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // Registro
             // 

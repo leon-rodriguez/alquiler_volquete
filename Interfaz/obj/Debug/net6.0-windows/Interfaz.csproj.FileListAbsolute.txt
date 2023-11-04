@@ -13,10 +13,6 @@ C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\refint\In
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.pdb
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.genruntimeconfig.cache
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\ref\Interfaz.dll
-C:\Users\leonr\source\repos\volquete\Interfaz\bin\Debug\net6.0-windows\Entidades.dll
-C:\Users\leonr\source\repos\volquete\Interfaz\bin\Debug\net6.0-windows\Entidades.pdb
-C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.csproj.AssemblyReference.cache
-C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.csproj.CopyComplete
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.Login.resources
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.Registro.resources
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.HomeVolquetes.resources
@@ -26,4 +22,3 @@ C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.VolqueteCard.resources
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.MensajeNoDisponible.resources
 C:\Users\leonr\source\repos\volquete\Interfaz\obj\Debug\net6.0-windows\Interfaz.LineaUsuario.resources
-C:\Users\leonr\source\repos\volquete\Interfaz\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

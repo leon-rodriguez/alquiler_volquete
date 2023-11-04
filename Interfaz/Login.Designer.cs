@@ -102,7 +102,6 @@
             btnIniciarSesion.TabIndex = 4;
             btnIniciarSesion.Text = "Iniciar sesion";
             btnIniciarSesion.UseVisualStyleBackColor = true;
-            btnIniciarSesion.Click += btnIniciarSesion_Click;
             // 
             // label3
             // 
@@ -127,7 +126,6 @@
             btnRegistrarse.TabIndex = 6;
             btnRegistrarse.TabStop = true;
             btnRegistrarse.Text = "Registrate aqui";
-            btnRegistrarse.LinkClicked += btnRegistrarse_LinkClicked;
             // 
             // btnAutoCompletar
             // 
@@ -145,7 +143,6 @@
             btnAutoCompletar.TabIndex = 7;
             btnAutoCompletar.Text = "Autocompletar";
             btnAutoCompletar.UseVisualStyleBackColor = false;
-            btnAutoCompletar.Click += btnAutoCompletar_Click;
             // 
             // Login
             // 

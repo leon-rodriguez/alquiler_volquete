@@ -69,7 +69,6 @@
             btnReservar.TabIndex = 21;
             btnReservar.Text = "Reservar";
             btnReservar.UseVisualStyleBackColor = false;
-            btnReservar.Click += btnReservar_Click;
             // 
             // lblDescripcion
             // 

@@ -12,12 +12,10 @@ namespace Interfaz
 {
     public partial class MensajeNoDisponible : Form
     {
-        private string mensajeAMostrar;
-        public MensajeNoDisponible(string mensajeAMostrar)
+
+        public MensajeNoDisponible()
         {
             InitializeComponent();
-            this.mensajeAMostrar = mensajeAMostrar;
-            lblMensaje.Text = mensajeAMostrar;
         }
     }
 }

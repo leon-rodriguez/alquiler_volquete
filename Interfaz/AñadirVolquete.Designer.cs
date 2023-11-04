@@ -95,7 +95,6 @@
             btnAñadirVolquete.TabIndex = 4;
             btnAñadirVolquete.Text = "Añadir";
             btnAñadirVolquete.UseVisualStyleBackColor = false;
-            btnAñadirVolquete.Click += btnAñadirVolquete_Click;
             // 
             // txtDescripcionVolquete
             // 

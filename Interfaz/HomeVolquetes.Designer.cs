@@ -75,7 +75,6 @@
             btnCerrarSesion.TabIndex = 6;
             btnCerrarSesion.Text = "Cerrar sesion";
             btnCerrarSesion.UseVisualStyleBackColor = false;
-            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // panelCuentaSubmenu
             // 
@@ -102,7 +101,6 @@
             btnAdministrarUsuarios.TabIndex = 5;
             btnAdministrarUsuarios.Text = "Administrar usuarios";
             btnAdministrarUsuarios.UseVisualStyleBackColor = false;
-            btnAdministrarUsuarios.Click += btnAdministrarUsuarios_Click;
             // 
             // btnAlquileresUsuario
             // 
@@ -118,7 +116,6 @@
             btnAlquileresUsuario.TabIndex = 3;
             btnAlquileresUsuario.Text = "Tus alquileres";
             btnAlquileresUsuario.UseVisualStyleBackColor = false;
-            btnAlquileresUsuario.Click += btnAlquileresUsuario_Click;
             // 
             // btnCuenta
             // 
@@ -133,7 +130,6 @@
             btnCuenta.TabIndex = 4;
             btnCuenta.Text = "Cuenta";
             btnCuenta.UseVisualStyleBackColor = true;
-            btnCuenta.Click += btnCuenta_Click;
             // 
             // panelVolquetesSubmenu
             // 
@@ -161,7 +157,6 @@
             btnAñadirVolquete.TabIndex = 5;
             btnAñadirVolquete.Text = "Añadir stock";
             btnAñadirVolquete.UseVisualStyleBackColor = false;
-            btnAñadirVolquete.Click += btnAñadirVolquete_Click;
             // 
             // btnVerVolquetesResiduos
             // 
@@ -177,7 +172,6 @@
             btnVerVolquetesResiduos.TabIndex = 4;
             btnVerVolquetesResiduos.Text = "Volquetes residuos";
             btnVerVolquetesResiduos.UseVisualStyleBackColor = false;
-            btnVerVolquetesResiduos.Click += btnVerVolquetesResiduos_Click;
             // 
             // btnVerConstruccion
             // 
@@ -193,7 +187,6 @@
             btnVerConstruccion.TabIndex = 3;
             btnVerConstruccion.Text = "Volquetes contruccion";
             btnVerConstruccion.UseVisualStyleBackColor = false;
-            btnVerConstruccion.Click += btnVerConstruccion_Click;
             // 
             // btnVolquetes
             // 
@@ -208,7 +201,6 @@
             btnVolquetes.TabIndex = 2;
             btnVolquetes.Text = "Volquetes";
             btnVolquetes.UseVisualStyleBackColor = true;
-            btnVolquetes.Click += btnVolquetes_Click;
             // 
             // panelLogo
             // 

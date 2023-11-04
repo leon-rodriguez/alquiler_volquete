@@ -1,4 +1,4 @@
-using Entidades;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,108 +11,7 @@ namespace Interfaz
         public Login()
         {
             InitializeComponent();
-            //crearSuperUsuario();
-        }
-
-        //hace superusuario a determinado usuario ya creado en la db
-        private void crearSuperUsuario(int usuarioId)
-        {
-            List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(@"..\..\..\..\DBxml\usuariosDB");
-            int index = 0;
-            foreach (Usuario usuario in listaUsuarios)
-            {
-                if (usuario.Id == usuarioId)
-                {
-                    SuperUsuario superUsuario = new SuperUsuario(usuario.Username, usuario.Contraseña, usuario.Mail, Roles.superUsuario);
-                    superUsuario.Id = usuario.Id;
-                    listaUsuarios.RemoveAt(index);
-                    listaUsuarios.Insert(index, superUsuario);
-                    break;
-                }
-                index++;    
-            }
-            Serializadora.EscribirXMLUsuarios(@"..\..\..\..\DBxml\usuariosDB", listaUsuarios);
-        }
-
-        private void btnRegistrarse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Registro registro = new Registro();
-            this.Hide();
-            registro.Show();
-        }
-
-        // si se valida usuario y contraseña se entra en la aplicacion
-        private void btnIniciarSesion_Click(object sender, EventArgs e)
-        {
-            string userName = txtUser.Text;
-            string contraseña = txtContraseña.Text;
-            Usuario usuarioProvicional = new UsuarioComun(userName, contraseña, "", Roles.usuario);
-
-            if (usuarioProvicional.IniciarSesion())
-            {
-                if (usuarioProvicional.Rol == Roles.superUsuario)
-                {
-                    SuperUsuario usuarioSuper = new SuperUsuario(userName, contraseña, "", Roles.superUsuario);
-                    usuarioSuper.IniciarSesion();
-                    HomeVolquetes homeVolquetes = new HomeVolquetes(usuarioSuper);
-                    homeVolquetes.Show();
-                    this.Hide();
-                }
-                else if (usuarioProvicional.Rol == Roles.administrador)
-                {
-                    Administrador usuarioAdmin = new Administrador(userName, contraseña, "", Roles.administrador);
-                    usuarioAdmin.IniciarSesion();
-                    HomeVolquetes homeVolquetes = new HomeVolquetes(usuarioAdmin);
-                    homeVolquetes.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    UsuarioComun usuarioComun = new UsuarioComun(userName, contraseña, "", Roles.usuario);
-                    usuarioComun.IniciarSesion();
-                    HomeVolquetes homeVolquetes = new HomeVolquetes(usuarioComun);
-                    homeVolquetes.Show();
-                    this.Hide();
-                }
-            }
-            else
-            {
-                MessageBox.Show("No hay ninguna cuenta que coincida con estos datos, reviselos cuidadosamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnAutoCompletar_Click(object sender, EventArgs e)
-        {
-            txtUser.Text = autocompletar();
-        }
-
-        //autocompleta con el primer nombre encontrado deñ usuario
-        private string autocompletar()
-        {
-            string txtInputUser = txtUser.Text;
-            string respuesta = "";
-            if (txtInputUser.Length == 0)
-            {
-                return respuesta;
-            }
-            List<Usuario> listaUsuarios = Serializadora.LeerXMLUsuario(@"..\..\..\..\DBxml\usuariosDB");
-            bool huboCoincidencia = false;
-            foreach (Usuario usuario in listaUsuarios)
-            {
-                if (usuario.Username.StartsWith(txtInputUser))
-                {
-                    respuesta = usuario.Username;
-                    huboCoincidencia = true;
-                    break;
-                }
-            }
-
-            if (!huboCoincidencia)
-            {
-                respuesta = txtInputUser;
-            }
-            return respuesta;
-
+            Console.WriteLine("hola");
         }
     }
 }
