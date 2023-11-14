@@ -11,7 +11,7 @@ namespace Interfaz
         public Login()
         {
             InitializeComponent();
-            Console.WriteLine("hola");
+            Console.WriteLine("hola como andan");
         }
     }
 }
