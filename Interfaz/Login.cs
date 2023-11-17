@@ -1,4 +1,5 @@
 
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,9 @@ namespace Interfaz
         public Login()
         {
             InitializeComponent();
-            Console.WriteLine("hola como andan");
+            //DB.Insert("Caruana", "Fabiano", 42);
+            DB.Select();
+            Console.WriteLine("hola como estan");
         }
     }
 }

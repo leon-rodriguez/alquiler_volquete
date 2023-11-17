@@ -9,3 +9,4 @@ C:\Users\leonr\source\repos\volquete\Entidades\obj\Debug\net6.0\Entidades.dll
 C:\Users\leonr\source\repos\volquete\Entidades\obj\Debug\net6.0\refint\Entidades.dll
 C:\Users\leonr\source\repos\volquete\Entidades\obj\Debug\net6.0\Entidades.pdb
 C:\Users\leonr\source\repos\volquete\Entidades\obj\Debug\net6.0\ref\Entidades.dll
+C:\Users\leonr\source\repos\volquete\Entidades\obj\Debug\net6.0\Entidades.csproj.AssemblyReference.cache
